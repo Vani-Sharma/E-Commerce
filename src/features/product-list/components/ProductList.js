@@ -1,6 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
-import { fetchAllProductsAsync } from "../productSlice";
+import {
+  fetchAllProductsAsync,
+  fetchProductsByFilterAsync,
+} from "../productSlice";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronLeftIcon,
@@ -16,11 +19,9 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 const sortOptions = [
-  { name: "Most Popular", href: "#", current: true },
-  { name: "Best Rating", href: "#", current: false },
-  { name: "Newest", href: "#", current: false },
-  { name: "Price: Low to High", href: "#", current: false },
-  { name: "Price: High to Low", href: "#", current: false },
+  { name: "Best Rating", sort: "rating", order: "desc", current: false },
+  { name: "Price: Low to High", sort: "price", order: "asc", current: false },
+  { name: "Price: High to Low", sort: "price", order: "desc", current: false },
 ];
 
 const filters = [
@@ -84,10 +85,22 @@ function classNames(...classes) {
 export default function ProductList() {
   const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [filter, setFilter] = useState({});
   const products = useSelector((state) => state.product.products);
 
   const handlefilter = (e, section, option) => {
-    console.log(section.id, option.value);
+    const newFilter = { ...filter, [section.id]: option.values };
+
+    setFilter(newFilter);
+    dispatch(fetchProductsByFilterAsync(newFilter));
+    console.log(section.id, option.values);
+  };
+
+  const handleSort = (e, option) => {
+    const newFilter = { ...filter, _sort: option.sort, _order: option.order };
+
+    setFilter(newFilter);
+    dispatch(fetchProductsByFilterAsync(newFilter));
   };
 
   useEffect(() => {
@@ -241,8 +254,8 @@ export default function ProductList() {
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>
                           {({ active }) => (
-                            <a
-                              href={option.href}
+                            <p
+                              onClick={(e) => handleSort(e, option)}
                               className={classNames(
                                 option.current
                                   ? "font-medium text-gray-900"
@@ -252,7 +265,7 @@ export default function ProductList() {
                               )}
                             >
                               {option.name}
-                            </a>
+                            </p>
                           )}
                         </Menu.Item>
                       ))}

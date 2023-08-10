@@ -6,11 +6,28 @@ export function fetchAllProducts() {
   });
 }
 
-export function fetchProductsByFilter(filter) {
-  // filter={"category"="smartphones"}
+export function fetchProductsByFilter(filter, sort, pagination) {
+  // filter={"category":["smartphones","laptops"]}
+  // sort={_sort:"price",_order:"desc"}
+  //pagination={_page:1,_limit=10}
   let queryString = "";
 
-  for (let key in filter) queryString += `${key}=${filter[key]}&`;
+  for (let key in filter) {
+    const categoryValue = filter[key];
+
+    if (categoryValue.length) {
+      const lastCategoryValue = categoryValue[categoryValue.length - 1];
+      queryString += `${key}=${lastCategoryValue}&`;
+    }
+  }
+
+  for (let key in sort) {
+    queryString += `${key}=${sort[key]}&`;
+  }
+
+  for (let key in pagination) {
+    queryString += `${key}=${sort[key]}&`;
+  }
 
   return new Promise(async (resolve) => {
     const response = await fetch(

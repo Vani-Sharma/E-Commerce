@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
-
+import { useForm } from "react-hook-form";
+// password pattern regex
 function Signup() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  console.log(errors);
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -16,7 +24,12 @@ function Signup() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form
+            className="space-y-6"
+            onSubmit={handleSubmit((data) => {
+              console.log(data);
+            })}
+          >
             <div>
               <div className="flex items-center justify-between">
                 <label
@@ -29,12 +42,15 @@ function Signup() {
               <div className="mt-2">
                 <input
                   id="email"
-                  name="email"
+                  {...register("email", { required: "email is required" })}
                   type="email"
-                  autoComplete="email"
-                  required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-left">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -50,19 +66,24 @@ function Signup() {
               <div className="mt-2">
                 <input
                   id="password"
-                  name="password"
+                  {...register("password", {
+                    required: "password is required",
+                  })}
                   type="password"
-                  autoComplete="current-password"
-                  required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.password && (
+                  <p className="text-red-500 text-left">
+                    {errors.password.message}
+                  </p>
+                )}
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="confirm-password"
+                  htmlFor="confirmPassword"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
                   Confirm Password
@@ -70,13 +91,18 @@ function Signup() {
               </div>
               <div className="mt-2">
                 <input
-                  id="confirm-password"
-                  name="password"
+                  id="confirmPassword"
+                  {...register("confirmPassword", {
+                    required: "confirm password is required",
+                  })}
                   type="password"
-                  autoComplete="current-password"
-                  required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.confirmPassword && (
+                  <p className="text-red-500 text-left">
+                    {errors.confirmPassword.message}
+                  </p>
+                )}
               </div>
             </div>
 

@@ -8,6 +8,7 @@ import CartPage from "./pages/CartPage";
 import Checkout from "./pages/Checkout";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import Protected from "./features/auth/components/Protected";
+import LogOut from "./features/auth/components/LogOut";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,10 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignupPage />,
   },
-
+  {
+    path: "/logout",
+    element: <LogOut />,
+  },
   {
     path: "/cart",
     element: (

@@ -63,6 +63,7 @@ export default function Checkout() {
           <div className="lg:col-span-3">
             <form
               className="bg-white px-5 py-5 mt-12 "
+              //check function
               onSubmit={handleSubmit((data) => {
                 dispatch();
                 updateUserAsync({

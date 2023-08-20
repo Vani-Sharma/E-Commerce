@@ -7,7 +7,10 @@ import {
   selectItems,
   updateItemAsync,
 } from "../features/cart/cartSlice";
-import { selectLoggedInUser } from "../features/auth/authSlice";
+import {
+  selectLoggedInUser,
+  updateUserAsync,
+} from "../features/auth/authSlice";
 
 const addresses = [
   {
@@ -62,7 +65,11 @@ export default function Checkout() {
               className="bg-white px-5 py-5 mt-12 "
               onSubmit={handleSubmit((data) => {
                 dispatch();
-                // checkUserAsync({ email: data.email, password: data.password })
+                updateUserAsync({
+                  email: data.email,
+                  password: data.password,
+                  addresses: [],
+                });
                 console.log({ data });
               })}
             >

@@ -1,5 +1,5 @@
-import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteItemAsync, selectItems, updateItemAsync } from "./cartSlice";
 
@@ -23,6 +23,7 @@ export default function Cart() {
   };
   return (
     <>
+      {!items.length && <Navigate to="/" replace={true}></Navigate>}
       <div className="mx-auto bg-white max-w-7xl px-4 mt-12 sm:px-6 lg:px-8">
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <h1 className="text-4xl mb-5 flex justify-start font-bold tracking-tight text-gray-900">

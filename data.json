@@ -48,9 +48,7 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/3/1.jpg"
-      ]
+      "images": ["https://i.dummyjson.com/data/products/3/1.jpg"]
     },
     {
       "id": 4,
@@ -1428,9 +1426,7 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/78/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/78/thumbnail.jpg"
-      ]
+      "images": ["https://i.dummyjson.com/data/products/78/thumbnail.jpg"]
     },
     {
       "id": 79,
@@ -1443,9 +1439,7 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/79/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/79/1.jpg"
-      ]
+      "images": ["https://i.dummyjson.com/data/products/79/1.jpg"]
     },
     {
       "id": 80,
@@ -1948,55 +1942,31 @@
     {
       "email": "vanisharma826@gmail.com",
       "password": "SDE@2sde",
-      "id": 1
+      "id": 1,
+      "addresses": []
     },
     {
       "email": "vashishtpranshu6286@gmail.com",
       "password": "123DA#da",
-      "id": 2
+      "id": 2,
+      "addresses": []
     }
   ],
   "cart": [
     {
-      "id": 44,
-      "title": "Ladies Multicolored Dress",
-      "description": "This classy shirt for women gives you a gorgeous look on everyday wear and specially for semi-casual wears.",
-      "price": 79,
-      "discountPercentage": 16.88,
-      "rating": 4.03,
-      "stock": 2,
-      "brand": "Ghazi Fabric",
-      "category": "womens-dresses",
-      "thumbnail": "https://i.dummyjson.com/data/products/44/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/44/1.jpg",
-        "https://i.dummyjson.com/data/products/44/2.jpg",
-        "https://i.dummyjson.com/data/products/44/3.jpg",
-        "https://i.dummyjson.com/data/products/44/4.jpg",
-        "https://i.dummyjson.com/data/products/44/thumbnail.jpg"
-      ],
-      "quantity": 5,
-      "user": 1
-    },
-    {
-      "id": 71,
-      "title": "Women Shoulder Bags",
-      "description": "LouisWill Women Shoulder Bags Long Clutches Cross Body Bags Phone Bags PU Leather Hand Bags Large Capacity Card Holders Zipper Coin Purses Fashion Crossbody Bags for Girls Ladies",
-      "price": 46,
-      "discountPercentage": 14.65,
-      "rating": 4.71,
-      "stock": 17,
-      "brand": "LouisWill",
-      "category": "womens-bags",
-      "thumbnail": "https://i.dummyjson.com/data/products/71/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/71/1.jpg",
-        "https://i.dummyjson.com/data/products/71/2.jpg",
-        "https://i.dummyjson.com/data/products/71/3.webp",
-        "https://i.dummyjson.com/data/products/71/thumbnail.jpg"
-      ],
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      "images": ["https://i.dummyjson.com/data/products/3/1.jpg"],
       "quantity": 1,
-      "user": 1
+      "user": 1,
+      "id": 1
     }
   ]
 }

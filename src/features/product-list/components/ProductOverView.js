@@ -45,7 +45,13 @@ export default function ProductOverView() {
 
   const handleCart = (e) => {
     e.preventDefault();
-    dispatch(addToCartAsync({ ...product, quantity: 1, user: user.id }));
+
+    //done so that product id does not crash with cart id as in frontend data.json is storing data
+    // and multiple users are adding data in same cart obj so deletion and updating of same id causes program crash
+    const newItem = { ...product, quantity: 1, user: user.id };
+    delete newItem["id"];
+    //allows cart to auto generate id for each new product added to cart
+    dispatch(addToCartAsync(newItem));
   };
   useEffect(() => {
     dispatch(fetchProductByIdAsync(params.id));

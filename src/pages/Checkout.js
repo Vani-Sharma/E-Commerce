@@ -11,6 +11,7 @@ import {
   selectLoggedInUser,
   updateUserAsync,
 } from "../features/auth/authSlice";
+import { createOrderAsync } from "../features/order/orderSlice";
 
 export default function Checkout() {
   const {
@@ -48,6 +49,18 @@ export default function Checkout() {
 
   const handlePayment = (e) => {
     setPaymentMethod(e.target.value);
+  };
+
+  const handleOrder = (e) => {
+    const order = {
+      user,
+      paymentMethod,
+      selectedAddress,
+      items,
+      totalAmount,
+      totalItems,
+    };
+    dispatch(createOrderAsync(order));
   };
   return (
     <>
@@ -413,12 +426,12 @@ export default function Checkout() {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6">
-                  <Link
-                    to="/checkout"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                  <div
+                    onClick={handleOrder}
+                    className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                   >
-                    Checkout
-                  </Link>
+                    Order Now
+                  </div>
                 </div>
                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                   <p>

@@ -1991,9 +1991,10 @@
       "images": [
         "https://i.dummyjson.com/data/products/3/1.jpg"
       ],
-      "quantity": 5,
+      "quantity": 2,
       "user": 1,
       "id": 1
     }
-  ]
+  ],
+  "orders": []
 }

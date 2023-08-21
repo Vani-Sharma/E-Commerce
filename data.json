@@ -48,7 +48,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/3/1.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ]
     },
     {
       "id": 4,
@@ -1426,7 +1428,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/78/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/78/thumbnail.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/78/thumbnail.jpg"
+      ]
     },
     {
       "id": 79,
@@ -1439,7 +1443,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/79/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/79/1.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/79/1.jpg"
+      ]
     },
     {
       "id": 80,
@@ -1943,7 +1949,26 @@
       "email": "vanisharma826@gmail.com",
       "password": "SDE@2sde",
       "id": 1,
-      "addresses": []
+      "addresses": [
+        {
+          "name": "Vani Sharma",
+          "email": "vanisharma826@gmail.com",
+          "phone": "234536",
+          "street": "xyz kanpur",
+          "city": "kanpur",
+          "state": "up",
+          "pinCode": "203927"
+        },
+        {
+          "name": "demo",
+          "email": "vashishtpranshu6286@gmail.com",
+          "phone": "12345678",
+          "street": "abc ",
+          "city": "prayagraj",
+          "state": "up",
+          "pinCode": "435709"
+        }
+      ]
     },
     {
       "email": "vashishtpranshu6286@gmail.com",
@@ -1963,8 +1988,10 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/3/1.jpg"],
-      "quantity": 1,
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ],
+      "quantity": 5,
       "user": 1,
       "id": 1
     }

@@ -12,34 +12,20 @@ import {
   updateUserAsync,
 } from "../features/auth/authSlice";
 
-const addresses = [
-  {
-    name: "John Willer",
-    street: "xyc",
-    city: "delhi",
-    pincode: "110096",
-    state: "delhi",
-    phone: 90988,
-  },
-
-  {
-    name: "jdhsu Willer",
-    street: "uehyn",
-    city: "chidf",
-    pincode: "3589",
-    state: "delhi",
-    phone: 9489589,
-  },
-];
 export default function Checkout() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const [open, setOpen] = useState(true);
+  const [selectedAddress, setSelectAddress] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState("cash");
+
   const items = useSelector(selectItems);
   const user = useSelector(selectLoggedInUser);
+
   const dispatch = useDispatch();
 
   const totalAmount = items.reduce(
@@ -55,6 +41,14 @@ export default function Checkout() {
   const handleRemove = (e, id) => {
     dispatch(deleteItemAsync(id));
   };
+
+  const handleAddress = (e) => {
+    setSelectAddress(user.addresses[e.target.value]);
+  };
+
+  const handlePayment = (e) => {
+    setPaymentMethod(e.target.value);
+  };
   return (
     <>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
@@ -63,15 +57,15 @@ export default function Checkout() {
           <div className="lg:col-span-3">
             <form
               className="bg-white px-5 py-5 mt-12 "
-              //check function
               onSubmit={handleSubmit((data) => {
-                dispatch();
-                updateUserAsync({
-                  email: data.email,
-                  password: data.password,
-                  addresses: [],
-                });
-                console.log({ data });
+                dispatch(
+                  updateUserAsync({
+                    ...user,
+                    addresses: [...user.addresses, data],
+                  })
+                );
+
+                reset();
               })}
             >
               <div className="space-y-12">
@@ -247,15 +241,16 @@ export default function Checkout() {
                   </p>
 
                   <ul role="list">
-                    {user.addresses.map((address) => (
+                    {user.addresses.map((address, index) => (
                       <li
-                        key={address.email}
+                        key={index}
                         className="flex justify-between mt-2 gap-x-6 py-5 px-5 border-solid border-2 border-gray-200"
                       >
                         <div className="flex gap-x-4">
                           <input
-                            id="cash"
+                            onChange={handleAddress}
                             name="address"
+                            value={index}
                             type="radio"
                             className="h-4 mt-1 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                           />
@@ -297,6 +292,9 @@ export default function Checkout() {
                         <div className="flex items-center gap-x-3">
                           <input
                             id="cash"
+                            onChange={handlePayment}
+                            value="cash"
+                            checked={paymentMethod === "cash"}
                             name="payment"
                             type="radio"
                             className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
@@ -311,6 +309,9 @@ export default function Checkout() {
                         <div className="flex items-center gap-x-3">
                           <input
                             id="card"
+                            onChange={handlePayment}
+                            value="card"
+                            checked={paymentMethod === "card"}
                             name="payment"
                             type="radio"
                             className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"

@@ -2238,6 +2238,198 @@
       "totalItems": 4,
       "status": "pending",
       "id": 3
+    },
+    {
+      "user": {
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
+        "id": 1,
+        "addresses": [
+          {
+            "name": "Vani Sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "234536",
+            "street": "xyz kanpur",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "203927"
+          },
+          {
+            "name": "demo",
+            "email": "vashishtpranshu6286@gmail.com",
+            "phone": "12345678",
+            "street": "abc ",
+            "city": "prayagraj",
+            "state": "up",
+            "pinCode": "435709"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "demo",
+        "email": "vashishtpranshu6286@gmail.com",
+        "phone": "12345678",
+        "street": "abc ",
+        "city": "prayagraj",
+        "state": "up",
+        "pinCode": "435709"
+      },
+      "items": [
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 2,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        },
+        {
+          "title": "Silver Ring Set Women",
+          "description": "Jewelry Type:RingsCertificate Type:NonePlating:Silver PlatedShapeattern:noneStyle:CLASSICReligious",
+          "price": 70,
+          "discountPercentage": 13.57,
+          "rating": 4.61,
+          "stock": 51,
+          "brand": "Darojay",
+          "category": "womens-jewellery",
+          "thumbnail": "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/76/1.jpg",
+            "https://i.dummyjson.com/data/products/76/2.jpg",
+            "https://i.dummyjson.com/data/products/76/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 3
+        }
+      ],
+      "totalAmount": 3817,
+      "totalItems": 4,
+      "status": "pending",
+      "id": 4
+    },
+    {
+      "user": {
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
+        "id": 1,
+        "addresses": [
+          {
+            "name": "Vani Sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "234536",
+            "street": "xyz kanpur",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "203927"
+          },
+          {
+            "name": "demo",
+            "email": "vashishtpranshu6286@gmail.com",
+            "phone": "12345678",
+            "street": "abc ",
+            "city": "prayagraj",
+            "state": "up",
+            "pinCode": "435709"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Vani Sharma",
+        "email": "vanisharma826@gmail.com",
+        "phone": "234536",
+        "street": "xyz kanpur",
+        "city": "kanpur",
+        "state": "up",
+        "pinCode": "203927"
+      },
+      "items": [
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 2,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        },
+        {
+          "title": "Silver Ring Set Women",
+          "description": "Jewelry Type:RingsCertificate Type:NonePlating:Silver PlatedShapeattern:noneStyle:CLASSICReligious",
+          "price": 70,
+          "discountPercentage": 13.57,
+          "rating": 4.61,
+          "stock": 51,
+          "brand": "Darojay",
+          "category": "womens-jewellery",
+          "thumbnail": "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/76/1.jpg",
+            "https://i.dummyjson.com/data/products/76/2.jpg",
+            "https://i.dummyjson.com/data/products/76/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 3
+        }
+      ],
+      "totalAmount": 3817,
+      "totalItems": 4,
+      "status": "pending",
+      "id": 5
     }
   ]
 }

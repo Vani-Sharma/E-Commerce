@@ -1974,7 +1974,17 @@
       "email": "vashishtpranshu6286@gmail.com",
       "password": "123DA#da",
       "id": 2,
-      "addresses": []
+      "addresses": [
+        {
+          "name": "Pranshu",
+          "email": "vashishtpranshu6286@gmail.com",
+          "phone": "23453355",
+          "street": "Kanak Vihar",
+          "city": "Coimbatore",
+          "state": "Tamil Nadu",
+          "pinCode": "394850"
+        }
+      ]
     }
   ],
   "cart": [
@@ -1991,7 +2001,7 @@
       "images": [
         "https://i.dummyjson.com/data/products/3/1.jpg"
       ],
-      "quantity": 2,
+      "quantity": 5,
       "user": 1,
       "id": 1
     },
@@ -2008,7 +2018,7 @@
       "images": [
         "https://i.dummyjson.com/data/products/3/1.jpg"
       ],
-      "quantity": 1,
+      "quantity": 2,
       "user": 1,
       "id": 2
     },
@@ -2030,6 +2040,48 @@
       "quantity": 1,
       "user": 1,
       "id": 3
+    },
+    {
+      "title": "Infinix INBOOK",
+      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+      "price": 1099,
+      "discountPercentage": 11.83,
+      "rating": 4.54,
+      "stock": 96,
+      "brand": "Infinix",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/9/1.jpg",
+        "https://i.dummyjson.com/data/products/9/2.png",
+        "https://i.dummyjson.com/data/products/9/3.png",
+        "https://i.dummyjson.com/data/products/9/4.jpg",
+        "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": 2,
+      "id": 4
+    },
+    {
+      "title": "3 lights lndenpant kitchen islang",
+      "description": "3 lights lndenpant kitchen islang dining room pendant rice paper chandelier contemporary led pendant light modern chandelier",
+      "price": 34,
+      "discountPercentage": 5.92,
+      "rating": 4.99,
+      "stock": 44,
+      "brand": "DADAWU",
+      "category": "lighting",
+      "thumbnail": "https://i.dummyjson.com/data/products/98/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/98/1.jpg",
+        "https://i.dummyjson.com/data/products/98/2.jpg",
+        "https://i.dummyjson.com/data/products/98/3.jpg",
+        "https://i.dummyjson.com/data/products/98/4.jpg",
+        "https://i.dummyjson.com/data/products/98/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": 2,
+      "id": 5
     }
   ],
   "orders": [
@@ -2086,290 +2138,30 @@
     },
     {
       "user": {
-        "email": "vanisharma826@gmail.com",
-        "password": "SDE@2sde",
-        "id": 1,
-        "addresses": [
-          {
-            "name": "Vani Sharma",
-            "email": "vanisharma826@gmail.com",
-            "phone": "234536",
-            "street": "xyz kanpur",
-            "city": "kanpur",
-            "state": "up",
-            "pinCode": "203927"
-          },
-          {
-            "name": "demo",
-            "email": "vashishtpranshu6286@gmail.com",
-            "phone": "12345678",
-            "street": "abc ",
-            "city": "prayagraj",
-            "state": "up",
-            "pinCode": "435709"
-          }
-        ]
-      },
-      "paymentMethod": "card",
-      "selectedAddress": {
-        "name": "Vani Sharma",
-        "email": "vanisharma826@gmail.com",
-        "phone": "234536",
-        "street": "xyz kanpur",
-        "city": "kanpur",
-        "state": "up",
-        "pinCode": "203927"
-      },
-      "items": [
-        {
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 2,
-          "user": 1,
-          "id": 1
-        }
-      ],
-      "totalAmount": 2498,
-      "totalItems": 2,
-      "id": 2
-    },
-    {
-      "user": {
-        "email": "vanisharma826@gmail.com",
-        "password": "SDE@2sde",
-        "id": 1,
-        "addresses": [
-          {
-            "name": "Vani Sharma",
-            "email": "vanisharma826@gmail.com",
-            "phone": "234536",
-            "street": "xyz kanpur",
-            "city": "kanpur",
-            "state": "up",
-            "pinCode": "203927"
-          },
-          {
-            "name": "demo",
-            "email": "vashishtpranshu6286@gmail.com",
-            "phone": "12345678",
-            "street": "abc ",
-            "city": "prayagraj",
-            "state": "up",
-            "pinCode": "435709"
-          }
-        ]
-      },
-      "paymentMethod": "card",
-      "selectedAddress": {
-        "name": "Vani Sharma",
-        "email": "vanisharma826@gmail.com",
-        "phone": "234536",
-        "street": "xyz kanpur",
-        "city": "kanpur",
-        "state": "up",
-        "pinCode": "203927"
-      },
-      "items": [
-        {
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 2,
-          "user": 1,
-          "id": 1
-        },
-        {
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 1,
-          "user": 1,
-          "id": 2
-        },
-        {
-          "title": "Silver Ring Set Women",
-          "description": "Jewelry Type:RingsCertificate Type:NonePlating:Silver PlatedShapeattern:noneStyle:CLASSICReligious",
-          "price": 70,
-          "discountPercentage": 13.57,
-          "rating": 4.61,
-          "stock": 51,
-          "brand": "Darojay",
-          "category": "womens-jewellery",
-          "thumbnail": "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/76/1.jpg",
-            "https://i.dummyjson.com/data/products/76/2.jpg",
-            "https://i.dummyjson.com/data/products/76/thumbnail.jpg"
-          ],
-          "quantity": 1,
-          "user": 1,
-          "id": 3
-        }
-      ],
-      "totalAmount": 3817,
-      "totalItems": 4,
-      "status": "pending",
-      "id": 3
-    },
-    {
-      "user": {
-        "email": "vanisharma826@gmail.com",
-        "password": "SDE@2sde",
-        "id": 1,
-        "addresses": [
-          {
-            "name": "Vani Sharma",
-            "email": "vanisharma826@gmail.com",
-            "phone": "234536",
-            "street": "xyz kanpur",
-            "city": "kanpur",
-            "state": "up",
-            "pinCode": "203927"
-          },
-          {
-            "name": "demo",
-            "email": "vashishtpranshu6286@gmail.com",
-            "phone": "12345678",
-            "street": "abc ",
-            "city": "prayagraj",
-            "state": "up",
-            "pinCode": "435709"
-          }
-        ]
-      },
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "demo",
         "email": "vashishtpranshu6286@gmail.com",
-        "phone": "12345678",
-        "street": "abc ",
-        "city": "prayagraj",
-        "state": "up",
-        "pinCode": "435709"
-      },
-      "items": [
-        {
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 2,
-          "user": 1,
-          "id": 1
-        },
-        {
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 1,
-          "user": 1,
-          "id": 2
-        },
-        {
-          "title": "Silver Ring Set Women",
-          "description": "Jewelry Type:RingsCertificate Type:NonePlating:Silver PlatedShapeattern:noneStyle:CLASSICReligious",
-          "price": 70,
-          "discountPercentage": 13.57,
-          "rating": 4.61,
-          "stock": 51,
-          "brand": "Darojay",
-          "category": "womens-jewellery",
-          "thumbnail": "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/76/1.jpg",
-            "https://i.dummyjson.com/data/products/76/2.jpg",
-            "https://i.dummyjson.com/data/products/76/thumbnail.jpg"
-          ],
-          "quantity": 1,
-          "user": 1,
-          "id": 3
-        }
-      ],
-      "totalAmount": 3817,
-      "totalItems": 4,
-      "status": "pending",
-      "id": 4
-    },
-    {
-      "user": {
-        "email": "vanisharma826@gmail.com",
-        "password": "SDE@2sde",
-        "id": 1,
+        "password": "123DA#da",
+        "id": 2,
         "addresses": [
           {
-            "name": "Vani Sharma",
-            "email": "vanisharma826@gmail.com",
-            "phone": "234536",
-            "street": "xyz kanpur",
-            "city": "kanpur",
-            "state": "up",
-            "pinCode": "203927"
-          },
-          {
-            "name": "demo",
+            "name": "Pranshu",
             "email": "vashishtpranshu6286@gmail.com",
-            "phone": "12345678",
-            "street": "abc ",
-            "city": "prayagraj",
-            "state": "up",
-            "pinCode": "435709"
+            "phone": "23453355",
+            "street": "Kanak Vihar",
+            "city": "Coimbatore",
+            "state": "Tamil Nadu",
+            "pinCode": "394850"
           }
         ]
       },
-      "paymentMethod": "cash",
+      "paymentMethod": "card",
       "selectedAddress": {
-        "name": "Vani Sharma",
-        "email": "vanisharma826@gmail.com",
-        "phone": "234536",
-        "street": "xyz kanpur",
-        "city": "kanpur",
-        "state": "up",
-        "pinCode": "203927"
+        "name": "Pranshu",
+        "email": "vashishtpranshu6286@gmail.com",
+        "phone": "23453355",
+        "street": "Kanak Vihar",
+        "city": "Coimbatore",
+        "state": "Tamil Nadu",
+        "pinCode": "394850"
       },
       "items": [
         {
@@ -2385,7 +2177,7 @@
           "images": [
             "https://i.dummyjson.com/data/products/3/1.jpg"
           ],
-          "quantity": 2,
+          "quantity": 5,
           "user": 1,
           "id": 1
         },
@@ -2402,7 +2194,7 @@
           "images": [
             "https://i.dummyjson.com/data/products/3/1.jpg"
           ],
-          "quantity": 1,
+          "quantity": 2,
           "user": 1,
           "id": 2
         },
@@ -2424,12 +2216,54 @@
           "quantity": 1,
           "user": 1,
           "id": 3
+        },
+        {
+          "title": "Infinix INBOOK",
+          "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+          "price": 1099,
+          "discountPercentage": 11.83,
+          "rating": 4.54,
+          "stock": 96,
+          "brand": "Infinix",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/9/1.jpg",
+            "https://i.dummyjson.com/data/products/9/2.png",
+            "https://i.dummyjson.com/data/products/9/3.png",
+            "https://i.dummyjson.com/data/products/9/4.jpg",
+            "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 2,
+          "id": 4
+        },
+        {
+          "title": "3 lights lndenpant kitchen islang",
+          "description": "3 lights lndenpant kitchen islang dining room pendant rice paper chandelier contemporary led pendant light modern chandelier",
+          "price": 34,
+          "discountPercentage": 5.92,
+          "rating": 4.99,
+          "stock": 44,
+          "brand": "DADAWU",
+          "category": "lighting",
+          "thumbnail": "https://i.dummyjson.com/data/products/98/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/98/1.jpg",
+            "https://i.dummyjson.com/data/products/98/2.jpg",
+            "https://i.dummyjson.com/data/products/98/3.jpg",
+            "https://i.dummyjson.com/data/products/98/4.jpg",
+            "https://i.dummyjson.com/data/products/98/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 2,
+          "id": 5
         }
       ],
-      "totalAmount": 3817,
-      "totalItems": 4,
+      "totalAmount": 9946,
+      "totalItems": 10,
       "status": "pending",
-      "id": 5
+      "id": 2
     }
   ]
 }

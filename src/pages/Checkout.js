@@ -11,10 +11,7 @@ import {
   selectLoggedInUser,
   updateUserAsync,
 } from "../features/auth/authSlice";
-import {
-  createOrderAsync,
-  currentOrderstatus,
-} from "../features/order/orderSlice";
+import { createOrderAsync, currentOrder } from "../features/order/orderSlice";
 
 export default function Checkout() {
   const {
@@ -27,7 +24,7 @@ export default function Checkout() {
   const [selectedAddress, setSelectAddress] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState("cash");
 
-  const orderPlaced = useSelector(currentOrderstatus);
+  const currentOrders = useSelector(currentOrder);
   const items = useSelector(selectItems);
   const user = useSelector(selectLoggedInUser);
 
@@ -74,7 +71,12 @@ export default function Checkout() {
   return (
     <>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
-      {orderPlaced && <Navigate to="/order-success" replace={true}></Navigate>}
+      {currentOrders && (
+        <Navigate
+          to={`/order-success/${currentOrders.id}`}
+          replace={true}
+        ></Navigate>
+      )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-3">

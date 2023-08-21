@@ -1996,5 +1996,116 @@
       "id": 1
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "user": {
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
+        "id": 1,
+        "addresses": [
+          {
+            "name": "Vani Sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "234536",
+            "street": "xyz kanpur",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "203927"
+          },
+          {
+            "name": "demo",
+            "email": "vashishtpranshu6286@gmail.com",
+            "phone": "12345678",
+            "street": "abc ",
+            "city": "prayagraj",
+            "state": "up",
+            "pinCode": "435709"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": null,
+      "items": [
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 2,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 2498,
+      "totalItems": 2,
+      "id": 1
+    },
+    {
+      "user": {
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
+        "id": 1,
+        "addresses": [
+          {
+            "name": "Vani Sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "234536",
+            "street": "xyz kanpur",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "203927"
+          },
+          {
+            "name": "demo",
+            "email": "vashishtpranshu6286@gmail.com",
+            "phone": "12345678",
+            "street": "abc ",
+            "city": "prayagraj",
+            "state": "up",
+            "pinCode": "435709"
+          }
+        ]
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Vani Sharma",
+        "email": "vanisharma826@gmail.com",
+        "phone": "234536",
+        "street": "xyz kanpur",
+        "city": "kanpur",
+        "state": "up",
+        "pinCode": "203927"
+      },
+      "items": [
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 2,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 2498,
+      "totalItems": 2,
+      "id": 2
+    }
+  ]
 }

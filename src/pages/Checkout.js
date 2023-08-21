@@ -11,7 +11,10 @@ import {
   selectLoggedInUser,
   updateUserAsync,
 } from "../features/auth/authSlice";
-import { createOrderAsync } from "../features/order/orderSlice";
+import {
+  createOrderAsync,
+  currentOrderstatus,
+} from "../features/order/orderSlice";
 
 export default function Checkout() {
   const {
@@ -24,6 +27,7 @@ export default function Checkout() {
   const [selectedAddress, setSelectAddress] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState("cash");
 
+  const orderPlaced = useSelector(currentOrderstatus);
   const items = useSelector(selectItems);
   const user = useSelector(selectLoggedInUser);
 
@@ -52,19 +56,25 @@ export default function Checkout() {
   };
 
   const handleOrder = (e) => {
-    const order = {
-      user,
-      paymentMethod,
-      selectedAddress,
-      items,
-      totalAmount,
-      totalItems,
-    };
-    dispatch(createOrderAsync(order));
+    if (selectedAddress && paymentMethod) {
+      const order = {
+        user,
+        paymentMethod,
+        selectedAddress,
+        items,
+        totalAmount,
+        totalItems,
+        status: "pending",
+      };
+      dispatch(createOrderAsync(order));
+    } else {
+      alert("Select address and Payment method");
+    }
   };
   return (
     <>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
+      {orderPlaced && <Navigate to="/order-success" replace={true}></Navigate>}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-3">

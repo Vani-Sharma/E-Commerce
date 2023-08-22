@@ -1948,7 +1948,6 @@
     {
       "email": "vanisharma826@gmail.com",
       "password": "SDE@2sde",
-      "id": 1,
       "addresses": [
         {
           "name": "Vani Sharma",
@@ -1957,131 +1956,33 @@
           "street": "xyz kanpur",
           "city": "kanpur",
           "state": "up",
-          "pinCode": "203927"
-        },
-        {
-          "name": "demo",
-          "email": "vashishtpranshu6286@gmail.com",
-          "phone": "12345678",
-          "street": "abc ",
-          "city": "prayagraj",
-          "state": "up",
-          "pinCode": "435709"
+          "pinCode": "122"
         }
-      ]
-    },
-    {
-      "email": "vashishtpranshu6286@gmail.com",
-      "password": "123DA#da",
-      "id": 2,
-      "addresses": [
-        {
-          "name": "Pranshu",
-          "email": "vashishtpranshu6286@gmail.com",
-          "phone": "23453355",
-          "street": "Kanak Vihar",
-          "city": "Coimbatore",
-          "state": "Tamil Nadu",
-          "pinCode": "394850"
-        }
-      ]
+      ],
+      "id": 1
     }
   ],
   "cart": [
     {
-      "title": "Samsung Universe 9",
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
-      "discountPercentage": 15.46,
-      "rating": 4.09,
-      "stock": 36,
-      "brand": "Samsung",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      "title": "Cycle Bike Glow",
+      "description": "Universal fitment and easy to install no special wires, can be easily installed and removed. Fits most standard tyre air stem valves of road, mountain bicycles, motocycles and cars.Bright led will turn on w",
+      "price": 35,
+      "discountPercentage": 11.08,
+      "rating": 4.1,
+      "stock": 63,
+      "brand": "Neon LED Light",
+      "category": "automotive",
+      "thumbnail": "https://i.dummyjson.com/data/products/90/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/3/1.jpg"
+        "https://i.dummyjson.com/data/products/90/1.jpg",
+        "https://i.dummyjson.com/data/products/90/2.jpg",
+        "https://i.dummyjson.com/data/products/90/3.jpg",
+        "https://i.dummyjson.com/data/products/90/4.jpg",
+        "https://i.dummyjson.com/data/products/90/thumbnail.jpg"
       ],
-      "quantity": 5,
+      "quantity": 1,
       "user": 1,
       "id": 1
-    },
-    {
-      "title": "Samsung Universe 9",
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
-      "discountPercentage": 15.46,
-      "rating": 4.09,
-      "stock": 36,
-      "brand": "Samsung",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/3/1.jpg"
-      ],
-      "quantity": 2,
-      "user": 1,
-      "id": 2
-    },
-    {
-      "title": "Silver Ring Set Women",
-      "description": "Jewelry Type:RingsCertificate Type:NonePlating:Silver PlatedShapeattern:noneStyle:CLASSICReligious",
-      "price": 70,
-      "discountPercentage": 13.57,
-      "rating": 4.61,
-      "stock": 51,
-      "brand": "Darojay",
-      "category": "womens-jewellery",
-      "thumbnail": "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/76/1.jpg",
-        "https://i.dummyjson.com/data/products/76/2.jpg",
-        "https://i.dummyjson.com/data/products/76/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": 1,
-      "id": 3
-    },
-    {
-      "title": "Infinix INBOOK",
-      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
-      "price": 1099,
-      "discountPercentage": 11.83,
-      "rating": 4.54,
-      "stock": 96,
-      "brand": "Infinix",
-      "category": "laptops",
-      "thumbnail": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/9/1.jpg",
-        "https://i.dummyjson.com/data/products/9/2.png",
-        "https://i.dummyjson.com/data/products/9/3.png",
-        "https://i.dummyjson.com/data/products/9/4.jpg",
-        "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": 2,
-      "id": 4
-    },
-    {
-      "title": "3 lights lndenpant kitchen islang",
-      "description": "3 lights lndenpant kitchen islang dining room pendant rice paper chandelier contemporary led pendant light modern chandelier",
-      "price": 34,
-      "discountPercentage": 5.92,
-      "rating": 4.99,
-      "stock": 44,
-      "brand": "DADAWU",
-      "category": "lighting",
-      "thumbnail": "https://i.dummyjson.com/data/products/98/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/98/1.jpg",
-        "https://i.dummyjson.com/data/products/98/2.jpg",
-        "https://i.dummyjson.com/data/products/98/3.jpg",
-        "https://i.dummyjson.com/data/products/98/4.jpg",
-        "https://i.dummyjson.com/data/products/98/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": 2,
-      "id": 5
     }
   ],
   "orders": [
@@ -2089,7 +1990,6 @@
       "user": {
         "email": "vanisharma826@gmail.com",
         "password": "SDE@2sde",
-        "id": 1,
         "addresses": [
           {
             "name": "Vani Sharma",
@@ -2098,172 +1998,157 @@
             "street": "xyz kanpur",
             "city": "kanpur",
             "state": "up",
-            "pinCode": "203927"
-          },
-          {
-            "name": "demo",
-            "email": "vashishtpranshu6286@gmail.com",
-            "phone": "12345678",
-            "street": "abc ",
-            "city": "prayagraj",
-            "state": "up",
-            "pinCode": "435709"
+            "pinCode": "122"
           }
-        ]
+        ],
+        "id": 1
       },
       "paymentMethod": "cash",
-      "selectedAddress": null,
+      "selectedAddress": {
+        "name": "Vani Sharma",
+        "email": "vanisharma826@gmail.com",
+        "phone": "234536",
+        "street": "xyz kanpur",
+        "city": "kanpur",
+        "state": "up",
+        "pinCode": "122"
+      },
       "items": [
         {
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "title": "lighting ceiling kitchen",
+          "description": "Wholesale slim hanging decorative kid room lighting ceiling kitchen chandeliers pendant light modern",
+          "price": 30,
+          "discountPercentage": 14.89,
+          "rating": 4.83,
+          "stock": 96,
+          "brand": "lightingbrilliance",
+          "category": "lighting",
+          "thumbnail": "https://i.dummyjson.com/data/products/96/thumbnail.jpg",
           "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
+            "https://i.dummyjson.com/data/products/96/1.jpg",
+            "https://i.dummyjson.com/data/products/96/2.jpg",
+            "https://i.dummyjson.com/data/products/96/3.jpg",
+            "https://i.dummyjson.com/data/products/96/4.jpg",
+            "https://i.dummyjson.com/data/products/96/thumbnail.jpg"
           ],
-          "quantity": 2,
+          "quantity": 1,
           "user": 1,
           "id": 1
         }
       ],
-      "totalAmount": 2498,
-      "totalItems": 2,
+      "totalAmount": 30,
+      "totalItems": 1,
+      "status": "pending",
       "id": 1
     },
     {
       "user": {
-        "email": "vashishtpranshu6286@gmail.com",
-        "password": "123DA#da",
-        "id": 2,
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
         "addresses": [
           {
-            "name": "Pranshu",
-            "email": "vashishtpranshu6286@gmail.com",
-            "phone": "23453355",
-            "street": "Kanak Vihar",
-            "city": "Coimbatore",
-            "state": "Tamil Nadu",
-            "pinCode": "394850"
+            "name": "Vani Sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "234536",
+            "street": "xyz kanpur",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "122"
           }
-        ]
+        ],
+        "id": 1
       },
-      "paymentMethod": "card",
+      "paymentMethod": "cash",
       "selectedAddress": {
-        "name": "Pranshu",
-        "email": "vashishtpranshu6286@gmail.com",
-        "phone": "23453355",
-        "street": "Kanak Vihar",
-        "city": "Coimbatore",
-        "state": "Tamil Nadu",
-        "pinCode": "394850"
+        "name": "Vani Sharma",
+        "email": "vanisharma826@gmail.com",
+        "phone": "234536",
+        "street": "xyz kanpur",
+        "city": "kanpur",
+        "state": "up",
+        "pinCode": "122"
       },
       "items": [
         {
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
           "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
           ],
-          "quantity": 5,
-          "user": 1,
-          "id": 1
-        },
-        {
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 2,
+          "quantity": 1,
           "user": 1,
           "id": 2
-        },
+        }
+      ],
+      "totalAmount": 1749,
+      "totalItems": 1,
+      "status": "pending",
+      "id": 2
+    },
+    {
+      "user": {
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
+        "addresses": [
+          {
+            "name": "Vani Sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "234536",
+            "street": "xyz kanpur",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "122"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Vani Sharma",
+        "email": "vanisharma826@gmail.com",
+        "phone": "234536",
+        "street": "xyz kanpur",
+        "city": "kanpur",
+        "state": "up",
+        "pinCode": "122"
+      },
+      "items": [
         {
-          "title": "Silver Ring Set Women",
-          "description": "Jewelry Type:RingsCertificate Type:NonePlating:Silver PlatedShapeattern:noneStyle:CLASSICReligious",
-          "price": 70,
-          "discountPercentage": 13.57,
-          "rating": 4.61,
-          "stock": 51,
-          "brand": "Darojay",
-          "category": "womens-jewellery",
-          "thumbnail": "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
+          "title": "Cycle Bike Glow",
+          "description": "Universal fitment and easy to install no special wires, can be easily installed and removed. Fits most standard tyre air stem valves of road, mountain bicycles, motocycles and cars.Bright led will turn on w",
+          "price": 35,
+          "discountPercentage": 11.08,
+          "rating": 4.1,
+          "stock": 63,
+          "brand": "Neon LED Light",
+          "category": "automotive",
+          "thumbnail": "https://i.dummyjson.com/data/products/90/thumbnail.jpg",
           "images": [
-            "https://i.dummyjson.com/data/products/76/1.jpg",
-            "https://i.dummyjson.com/data/products/76/2.jpg",
-            "https://i.dummyjson.com/data/products/76/thumbnail.jpg"
+            "https://i.dummyjson.com/data/products/90/1.jpg",
+            "https://i.dummyjson.com/data/products/90/2.jpg",
+            "https://i.dummyjson.com/data/products/90/3.jpg",
+            "https://i.dummyjson.com/data/products/90/4.jpg",
+            "https://i.dummyjson.com/data/products/90/thumbnail.jpg"
           ],
           "quantity": 1,
           "user": 1,
-          "id": 3
-        },
-        {
-          "title": "Infinix INBOOK",
-          "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
-          "price": 1099,
-          "discountPercentage": 11.83,
-          "rating": 4.54,
-          "stock": 96,
-          "brand": "Infinix",
-          "category": "laptops",
-          "thumbnail": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/9/1.jpg",
-            "https://i.dummyjson.com/data/products/9/2.png",
-            "https://i.dummyjson.com/data/products/9/3.png",
-            "https://i.dummyjson.com/data/products/9/4.jpg",
-            "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
-          ],
-          "quantity": 1,
-          "user": 2,
-          "id": 4
-        },
-        {
-          "title": "3 lights lndenpant kitchen islang",
-          "description": "3 lights lndenpant kitchen islang dining room pendant rice paper chandelier contemporary led pendant light modern chandelier",
-          "price": 34,
-          "discountPercentage": 5.92,
-          "rating": 4.99,
-          "stock": 44,
-          "brand": "DADAWU",
-          "category": "lighting",
-          "thumbnail": "https://i.dummyjson.com/data/products/98/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/98/1.jpg",
-            "https://i.dummyjson.com/data/products/98/2.jpg",
-            "https://i.dummyjson.com/data/products/98/3.jpg",
-            "https://i.dummyjson.com/data/products/98/4.jpg",
-            "https://i.dummyjson.com/data/products/98/thumbnail.jpg"
-          ],
-          "quantity": 1,
-          "user": 2,
-          "id": 5
+          "id": 1
         }
       ],
-      "totalAmount": 9946,
-      "totalItems": 10,
+      "totalAmount": 35,
+      "totalItems": 1,
       "status": "pending",
-      "id": 2
+      "id": 3
     }
   ]
 }

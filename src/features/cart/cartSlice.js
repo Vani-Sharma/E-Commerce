@@ -92,7 +92,6 @@ export const cartSlice = createSlice({
       })
       .addCase(deleteItemAsync.fulfilled, (state, action) => {
         state.status = "idle";
-        console.log(action.payload);
         const index = state.items.findIndex(
           (item) => item.id === action.payload.id
         );

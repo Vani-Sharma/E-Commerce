@@ -19,8 +19,8 @@ export const orderSlice = createSlice({
   name: "order",
   initialState,
   reducers: {
-    resetOrder: (state) => {
-      state.currentOrder = null;
+    resetOrder: (state, action) => {
+      state.currentOrder = action.payload;
     },
   },
   extraReducers: (builder) => {

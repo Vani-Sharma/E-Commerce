@@ -89,7 +89,6 @@ export default function Checkout() {
                     addresses: [...user.addresses, data],
                   })
                 );
-
                 reset();
               })}
             >

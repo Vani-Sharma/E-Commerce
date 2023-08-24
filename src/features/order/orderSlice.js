@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { createOrder } from "./orderAPI";
+import { selectLoggedInUser } from "../auth/authSlice";
 
 const initialState = {
   orders: [],

@@ -59,12 +59,11 @@ export default function Checkout() {
     if (selectedAddress && paymentMethod) {
       const order = {
         user,
-        paymentMethod,
-        selectedAddress,
         items,
         totalAmount,
         totalItems,
-        status: "pending",
+        paymentMethod,
+        selectedAddress,
       };
       dispatch(createOrderAsync(order));
     } else {

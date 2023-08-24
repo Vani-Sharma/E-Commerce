@@ -50,7 +50,7 @@ export function resetCart(userId) {
     const response = await fetchAllItemsByUserid(userId);
     const items = response.data;
     for (let item of items) {
-      await deleteItemFromCart(item.id);
+      await deleteCart(item.id);
     }
     resolve({ status: "success" });
   });

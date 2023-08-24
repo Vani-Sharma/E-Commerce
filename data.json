@@ -2017,29 +2017,30 @@
       },
       "items": [
         {
-          "title": "MacBook Pro",
-          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
-          "price": 1749,
-          "discountPercentage": 11.02,
-          "rating": 4.57,
-          "stock": 83,
-          "brand": "Apple",
-          "category": "laptops",
-          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+          "title": "OPPOF19",
+          "description": "OPPO F19 is officially announced on April 2021.",
+          "price": 280,
+          "discountPercentage": 17.91,
+          "rating": 4.3,
+          "stock": 123,
+          "brand": "OPPO",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
           "images": [
-            "https://i.dummyjson.com/data/products/6/1.png",
-            "https://i.dummyjson.com/data/products/6/2.jpg",
-            "https://i.dummyjson.com/data/products/6/3.png",
-            "https://i.dummyjson.com/data/products/6/4.jpg"
+            "https://i.dummyjson.com/data/products/4/1.jpg",
+            "https://i.dummyjson.com/data/products/4/2.jpg",
+            "https://i.dummyjson.com/data/products/4/3.jpg",
+            "https://i.dummyjson.com/data/products/4/4.jpg",
+            "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
           ],
           "quantity": 1,
           "user": 1,
           "id": 1
         }
       ],
-      "totalAmount": 1749,
+      "totalAmount": 280,
       "totalItems": 1,
-      "paymentMethod": "card",
+      "paymentMethod": "cash",
       "selectedAddress": {
         "name": "vani_sharma",
         "email": "vanisharma826@gmail.com",
@@ -2050,141 +2051,6 @@
         "pinCode": "3455"
       },
       "id": 1
-    },
-    {
-      "user": {
-        "email": "vanisharma826@gmail.com",
-        "password": "SDE@2sde",
-        "addresses": [
-          {
-            "name": "Vani Sharma",
-            "email": "vanisharma826@gmail.com",
-            "phone": "234536",
-            "street": "xyz kanpur",
-            "city": "kanpur",
-            "state": "up",
-            "pinCode": "122"
-          },
-          {
-            "name": "vani_sharma",
-            "email": "vanisharma826@gmail.com",
-            "phone": "23453355",
-            "street": "Kanak Vihar",
-            "city": "kanpur",
-            "state": "up",
-            "pinCode": "3455"
-          }
-        ],
-        "id": 1
-      },
-      "items": [
-        {
-          "title": "iPhone X",
-          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-          "price": 899,
-          "discountPercentage": 17.94,
-          "rating": 4.44,
-          "stock": 34,
-          "brand": "Apple",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/2/1.jpg",
-            "https://i.dummyjson.com/data/products/2/2.jpg",
-            "https://i.dummyjson.com/data/products/2/3.jpg",
-            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-          ],
-          "quantity": 1,
-          "user": 1,
-          "id": 1
-        }
-      ],
-      "totalAmount": 899,
-      "totalItems": 1,
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "Vani Sharma",
-        "email": "vanisharma826@gmail.com",
-        "phone": "234536",
-        "street": "xyz kanpur",
-        "city": "kanpur",
-        "state": "up",
-        "pinCode": "122"
-      },
-      "id": 2
-    },
-    {
-      "user": {
-        "email": "vashishtpranshu6286@gmail.com",
-        "password": "DA#234da",
-        "addresses": [
-          {
-            "name": "Pranshu",
-            "email": "vashishtpranshu6286@gmail.com",
-            "phone": "5693585",
-            "street": "Ghaziabad",
-            "city": "NCR",
-            "state": "up",
-            "pinCode": "123449"
-          }
-        ],
-        "id": 2
-      },
-      "items": [
-        {
-          "title": "Huawei P30",
-          "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
-          "price": 499,
-          "discountPercentage": 10.58,
-          "rating": 4.09,
-          "stock": 32,
-          "brand": "Huawei",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/5/1.jpg",
-            "https://i.dummyjson.com/data/products/5/2.jpg",
-            "https://i.dummyjson.com/data/products/5/3.jpg"
-          ],
-          "quantity": 1,
-          "user": 2,
-          "id": 1
-        },
-        {
-          "title": "Pubg Printed Graphic T-Shirt",
-          "description": "Product Description Features: 100% Ultra soft Polyester Jersey. Vibrant & colorful printing on front. Feels soft as cotton without ever cracking",
-          "price": 46,
-          "discountPercentage": 16.44,
-          "rating": 4.62,
-          "stock": 136,
-          "brand": "The Warehouse",
-          "category": "mens-shirts",
-          "thumbnail": "https://i.dummyjson.com/data/products/54/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/54/1.jpg",
-            "https://i.dummyjson.com/data/products/54/2.jpg",
-            "https://i.dummyjson.com/data/products/54/3.jpg",
-            "https://i.dummyjson.com/data/products/54/4.jpg",
-            "https://i.dummyjson.com/data/products/54/thumbnail.jpg"
-          ],
-          "quantity": 1,
-          "user": 2,
-          "id": 2
-        }
-      ],
-      "totalAmount": 545,
-      "totalItems": 2,
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "Pranshu",
-        "email": "vashishtpranshu6286@gmail.com",
-        "phone": "5693585",
-        "street": "Ghaziabad",
-        "city": "NCR",
-        "state": "up",
-        "pinCode": "123449"
-      },
-      "id": 3
     }
   ]
 }

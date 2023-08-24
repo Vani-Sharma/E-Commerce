@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchLoggedInUserOrders } from "./counterAPI";
+import { fetchLoggedInUserOrders } from "./userAPI";
 
 const initialState = {
   userOrder: [],
@@ -30,10 +30,12 @@ export const userSlice = createSlice({
       .addCase(fetchLoggedInUserOrdersAsync.fulfilled, (state, action) => {
         state.status = "idle";
         // this info is diff from logged in user
-        state.userOrder.push(action.payload);
+        state.userOrder = action.payload;
       });
   },
 });
+
+export const selectUserOrder = (state) => state.user.userOrder;
 
 export const { increment } = userSlice.actions;
 

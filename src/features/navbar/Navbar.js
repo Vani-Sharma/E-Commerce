@@ -8,7 +8,6 @@ import {
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectItems } from "../cart/cartSlice";
-import { dashboard } from "../../app/constants";
 
 const user = {
   name: "Tom Cook",
@@ -21,7 +20,7 @@ const navigation = [
   { name: "Team", href: "#", current: false },
 ];
 const userNavigation = [
-  { name: "Your Profile", link: "/profile" },
+  { name: "My Profile", link: "/profile" },
   { name: "My Orders", link: "/orders" },
   { name: "Sign out", link: "/logout" },
 ];
@@ -226,7 +225,7 @@ function Navbar({ children }) {
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl flex justify-start font-bold tracking-tight text-gray-900">
-              {dashboard}
+              E-Commerce
             </h1>
           </div>
         </header>

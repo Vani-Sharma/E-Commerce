@@ -8,6 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectItems } from "../cart/cartSlice";
+import { dashboard } from "../../app/constants";
 
 const user = {
   name: "Tom Cook",
@@ -225,7 +226,7 @@ function Navbar({ children }) {
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl flex justify-start font-bold tracking-tight text-gray-900">
-              Dashboard
+              {dashboard}
             </h1>
           </div>
         </header>

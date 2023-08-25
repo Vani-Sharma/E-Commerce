@@ -4,6 +4,7 @@ export function fetchLoggedInUserOrders(userId) {
       "http://localhost:8080/orders/?user.id=" + userId
     );
     const data = await response.json();
+    console.log(data);
     resolve({ data });
   });
 }

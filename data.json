@@ -2051,6 +2051,69 @@
         "pinCode": "3455"
       },
       "id": 1
+    },
+    {
+      "user": {
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
+        "addresses": [
+          {
+            "name": "Vani Sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "234536",
+            "street": "xyz kanpur",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "122"
+          },
+          {
+            "name": "vani_sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "23453355",
+            "street": "Kanak Vihar",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "3455"
+          }
+        ],
+        "id": 1
+      },
+      "items": [
+        {
+          "title": "OPPOF19",
+          "description": "OPPO F19 is officially announced on April 2021.",
+          "price": 280,
+          "discountPercentage": 17.91,
+          "rating": 4.3,
+          "stock": 123,
+          "brand": "OPPO",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/4/1.jpg",
+            "https://i.dummyjson.com/data/products/4/2.jpg",
+            "https://i.dummyjson.com/data/products/4/3.jpg",
+            "https://i.dummyjson.com/data/products/4/4.jpg",
+            "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 280,
+      "totalItems": 1,
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "vani_sharma",
+        "email": "vanisharma826@gmail.com",
+        "phone": "23453355",
+        "street": "Kanak Vihar",
+        "city": "kanpur",
+        "state": "up",
+        "pinCode": "3455"
+      },
+      "id": 2
     }
   ]
 }

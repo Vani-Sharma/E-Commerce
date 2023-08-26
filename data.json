@@ -1950,13 +1950,31 @@
       "password": "SDE@2sde",
       "addresses": [
         {
-          "name": "vani_sharma",
-          "email": "vanisharma826@gmail.com",
-          "phone": "23453355",
+          "name": "Vaniii",
+          "email": "zoyafactor12@yahoo.com",
+          "phone": "987654799",
+          "street": "Sector-22, Rohini",
+          "city": "Delhi",
+          "state": "Delhi",
+          "pinCode": "119382"
+        },
+        {
+          "name": "Vani Sharma",
+          "email": "vanshu23@yahoo.com",
+          "phone": "7452589",
           "street": "Kanak Vihar",
-          "city": "kanpur",
-          "state": "up",
-          "pinCode": "3455"
+          "city": "Coimbatore",
+          "state": "Tamil Nadu",
+          "pinCode": "775439"
+        },
+        {
+          "name": "Vanshika",
+          "email": "vanshu23@yahoo.com",
+          "phone": "987675",
+          "street": "Sector-14, Rohini",
+          "city": "Delhi",
+          "state": "Delhi",
+          "pinCode": "187085"
         }
       ],
       "id": 1
@@ -2167,6 +2185,65 @@
         "pinCode": "122"
       },
       "id": 3
+    },
+    {
+      "user": {
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
+        "addresses": [
+          {
+            "name": "Vanshika",
+            "email": "vanshu23@yahoo.com",
+            "phone": "987675",
+            "street": "Sector-14, Rohini",
+            "city": "Delhi",
+            "state": "Delhi",
+            "pinCode": "187085"
+          },
+          {
+            "name": "Vaniii",
+            "email": "zoyafactor12@yahoo.com",
+            "phone": "987654799",
+            "street": "Sector-22, Rohini",
+            "city": "Delhi",
+            "state": "Delhi",
+            "pinCode": "119382"
+          }
+        ],
+        "id": 1
+      },
+      "items": [
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 1249,
+      "totalItems": 1,
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Vanshika",
+        "email": "vanshu23@yahoo.com",
+        "phone": "987675",
+        "street": "Sector-14, Rohini",
+        "city": "Delhi",
+        "state": "Delhi",
+        "pinCode": "187085"
+      },
+      "id": 4
     }
   ]
 }

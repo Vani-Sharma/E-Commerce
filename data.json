@@ -1950,15 +1950,6 @@
       "password": "SDE@2sde",
       "addresses": [
         {
-          "name": "Vani Sharma",
-          "email": "vanisharma826@gmail.com",
-          "phone": "234536",
-          "street": "xyz kanpur",
-          "city": "kanpur",
-          "state": "up",
-          "pinCode": "122"
-        },
-        {
           "name": "vani_sharma",
           "email": "vanisharma826@gmail.com",
           "phone": "23453355",
@@ -2114,6 +2105,68 @@
         "pinCode": "3455"
       },
       "id": 2
+    },
+    {
+      "user": {
+        "email": "vanisharma826@gmail.com",
+        "password": "SDE@2sde",
+        "addresses": [
+          {
+            "name": "Vani Sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "234536",
+            "street": "xyz kanpur",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "122"
+          },
+          {
+            "name": "vani_sharma",
+            "email": "vanisharma826@gmail.com",
+            "phone": "23453355",
+            "street": "Kanak Vihar",
+            "city": "kanpur",
+            "state": "up",
+            "pinCode": "3455"
+          }
+        ],
+        "id": 1
+      },
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 4,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 3596,
+      "totalItems": 4,
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Vani Sharma",
+        "email": "vanisharma826@gmail.com",
+        "phone": "234536",
+        "street": "xyz kanpur",
+        "city": "kanpur",
+        "state": "up",
+        "pinCode": "122"
+      },
+      "id": 3
     }
   ]
 }

@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectLoggedInUser } from "../../auth/authSlice";
+import { selectUserInfo, updateUserAsync } from "../userSlice";
 
 export function UserProfile() {
   const dispatch = useDispatch();
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
+
+  const handleEdit = (e, index) => {};
+
+  const handleRemove = (e, index) => {
+    const newUser = { ...user, addresses: [...user.addresses] };
+    newUser.addresses.splice(index, 1);
+    dispatch(updateUserAsync(newUser));
+  };
   return (
     <div>
       <div className="mx-auto bg-white max-w-7xl px-4 mt-12 sm:px-6 lg:px-8">
@@ -21,7 +29,7 @@ export function UserProfile() {
           <p className="mt-0.5 flex justify-start text-sm text-gray-500">
             Your Addresses :
           </p>
-          {user.addresses.map((address) => (
+          {user.addresses.map((address, index) => (
             <div className="flex justify-between mt-2 gap-x-6 py-5 px-5 border-solid border-2 border-gray-200">
               <div className="flex gap-x-4">
                 <div className="min-w-0 flex-auto">
@@ -44,6 +52,24 @@ export function UserProfile() {
                 <p className="text-xs leading-5 text-gray-500">
                   {address.state}
                 </p>
+              </div>
+
+              <div className="hidden sm:flex sm:flex-col sm:items-end">
+                <button
+                  onClick={(e) => handleEdit(e, index)}
+                  type="button"
+                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                >
+                  Edit
+                </button>
+
+                <button
+                  onClick={(e) => handleRemove(e, index)}
+                  type="button"
+                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                >
+                  Remove
+                </button>
               </div>
             </div>
           ))}

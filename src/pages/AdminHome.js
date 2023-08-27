@@ -1,7 +1,7 @@
 import AdminProductList from "../features/admin/components/AdminProductList";
 import Navbar from "../features/navbar/Navbar";
 
-function Home() {
+function AdminHome() {
   return (
     <div>
       <Navbar>
@@ -11,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AdminHome;

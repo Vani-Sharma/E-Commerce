@@ -1990,6 +1990,13 @@
         }
       ],
       "id": 2
+    },
+    {
+      "email": "admin@yahoo.com",
+      "password": "Admin#123",
+      "addresses": [],
+      "role": "admin",
+      "id": 3
     }
   ],
   "cart": [],

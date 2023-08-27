@@ -8,6 +8,7 @@ import CartPage from "./pages/CartPage";
 import Checkout from "./pages/Checkout";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import Protected from "./features/auth/components/Protected";
+import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
 import LogOut from "./features/auth/components/LogOut";
 import { fetchAllItemsByUseridAsync } from "./features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";

@@ -184,17 +184,18 @@ export default function AdminProductList() {
               {/* Filters */}
               <DesktopFilter filters={filters} handlefilter={handlefilter} />
 
-              <div className="lg:col-span-3">
-                <div>
-                  <button className="rounded-md flex justify-start mx-8 bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <div className="grid lg:col-span-3">
+                <div className="col-start-1 col-end-3">
+                  <Link
+                    to="/admin/productform"
+                    className="rounded-md text-left mx-8 bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+                  >
                     Add New Product
-                  </button>
+                  </Link>
                 </div>
 
-                <div>
-                  {/* Product grid */}
-                  <ProductGrid filter={filter} products={products} />
-                </div>
+                {/* Product grid */}
+                <ProductGrid filter={filter} products={products} />
               </div>
             </div>
           </section>
@@ -442,7 +443,7 @@ function ProductGrid({ products }) {
                   </div>
                 </Link>
                 <div>
-                  <button className="rounded-md my-2 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  <button className="rounded-md flex justify-start my-2 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                     Edit Product
                   </button>
                 </div>

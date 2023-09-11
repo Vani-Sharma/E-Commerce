@@ -100,7 +100,7 @@ function Login() {
                 )}
               </div>
               {error && (
-                <p className="text-red-500 text-left">{error.message}</p>
+                <p className="text-red-500 text-left">{error.err.message}</p>
               )}
             </div>
 

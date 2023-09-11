@@ -79,7 +79,9 @@ export const userSlice = createSlice({
       .addCase(checkUserAsync.rejected, (state, action) => {
         state.status = "rejected";
         // state.error = action.error;
+
         state.error = action.payload;
+        console.log(state.error);
       })
       .addCase(signOutAsync.pending, (state, action) => {
         state.status = "loading";

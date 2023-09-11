@@ -24,11 +24,25 @@ export const updateUserAsync = createAsyncThunk(
   }
 );
 
+// FRONTEND
+// export const checkUserAsync = createAsyncThunk(
+//   "user/checkUser",
+//   async (loginfo) => {
+//       const response = await checkUser(loginfo);
+//       return response.data;
+//   }
+// );
+
 export const checkUserAsync = createAsyncThunk(
   "user/checkUser",
-  async (loginfo) => {
-    const response = await checkUser(loginfo);
-    return response.data;
+  async (loginfo, { rejectWithValue }) => {
+    try {
+      const response = await checkUser(loginfo);
+      return response.data;
+    } catch (err) {
+      console.log(err);
+      return rejectWithValue(err);
+    }
   }
 );
 
@@ -64,7 +78,8 @@ export const userSlice = createSlice({
       })
       .addCase(checkUserAsync.rejected, (state, action) => {
         state.status = "rejected";
-        state.error = action.error;
+        // state.error = action.error;
+        state.error = action.payload;
       })
       .addCase(signOutAsync.pending, (state, action) => {
         state.status = "loading";

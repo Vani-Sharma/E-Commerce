@@ -1,20 +1,24 @@
-const { Category } = require("../model/Category");
+const { User } = require("../model/User");
 
-exports.fetchCategories = async (req, res) => {
+exports.fetchUserById = async (req, res) => {
+  const { id } = req.params;
   try {
-    const categories = Category.find({}).exec();
-    res.status(200).json(categories);
+    //used projection in findById to
+    //return only essential things and not imp part such as password
+    const users = User.findById(id, "name email id").exec();
+    res.status(200).json(users);
   } catch (err) {
     res.status(400).json(err);
   }
 };
 
-exports.createCategory = async (req, res) => {
-  //this category we get from API body
-  const category = new Category(req.body);
+exports.updateUser = async (req, res) => {
+  const { id } = req.params;
   try {
-    const doc = await category.save();
-    res.status(201).json(doc);
+    const user = await User.findByIdAndUpdate(id, req.body, {
+      new: true, //returns new modified doc and not original old one
+    });
+    res.status(200).json(user);
   } catch (err) {
     res.status(400).json(err);
   }

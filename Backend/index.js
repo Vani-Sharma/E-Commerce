@@ -6,6 +6,8 @@ const { createProduct } = require("./controller/Product");
 const productRouter = require("./routes/Products");
 const brandRouter = require("./routes/Brands");
 const categoryRouter = require("./routes/Categories");
+const userRouter = require("./routes/User");
+const authRouter = require("./routes/Auth");
 
 //middleware
 server.use(
@@ -17,6 +19,8 @@ server.use(express.json()); //to parse req.body ---> expecting json body from fr
 server.use("/products", productRouter.router);
 server.use("/brands", brandRouter.router);
 server.use("/category", categoryRouter.router);
+server.use("/users", userRouter.router);
+server.use("/auth", authRouter.router);
 main().catch((err) => console.log(err));
 
 async function main() {

@@ -5,7 +5,7 @@ exports.fetchUserById = async (req, res) => {
   try {
     //used projection in findById to
     //return only essential things and not imp part such as password
-    const users = User.findById(id, "name email id").exec();
+    const users = await User.findById(id, "name email id").exec();
     res.status(200).json(users);
   } catch (err) {
     res.status(400).json(err);

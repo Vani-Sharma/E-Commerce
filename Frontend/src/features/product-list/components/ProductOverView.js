@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductByIdAsync } from "../productSlice";
 import { useParams } from "react-router-dom";
 import { selectLoggedInUser } from "../../auth/authSlice";
-import { addToCartAsync } from "../../cart/cartSlice";
+import { addToCartAsync, selectItems } from "../../cart/cartSlice";
 
 const color = [
   { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
@@ -39,19 +39,27 @@ export default function ProductOverView() {
   const [selectedColor, setSelectedColor] = useState(color[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const user = useSelector(selectLoggedInUser);
+  const items = useSelector(selectItems);
   const product = useSelector((state) => state.product.selectedProduct);
   const dispatch = useDispatch();
   const params = useParams();
 
   const handleCart = (e) => {
     e.preventDefault();
-
-    //done so that product id does not crash with cart id as in frontend data.json is storing data
-    // and multiple users are adding data in same cart obj so deletion and updating of same id causes program crash
-    const newItem = { ...product, quantity: 1, user: user.id };
-    delete newItem["id"];
-    //allows cart to auto generate id for each new product added to cart
-    dispatch(addToCartAsync(newItem));
+    if (items.findIndex((item) => item.product.id === product.id) < 0) {
+      //done so that product id does not crash with cart id as in frontend data.json is storing data
+      // and multiple users are adding data in same cart obj so deletion and updating of same id causes program crash
+      const newItem = {
+        //frontend ...product,
+        product: product.id, //backend
+        quantity: 1,
+        user: user.id,
+      };
+      // FRONTNED
+      // delete newItem["id"];
+      //allows cart to auto generate id for each new product added to cart
+      dispatch(addToCartAsync(newItem));
+    }
   };
   useEffect(() => {
     dispatch(fetchProductByIdAsync(params.id));

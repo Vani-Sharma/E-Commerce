@@ -32,13 +32,15 @@ export default function Checkout() {
   const dispatch = useDispatch();
 
   const totalAmount = items.reduce(
-    (amount, item) => item.price * item.quantity + amount,
+    (amount, item) => item.product.price * item.quantity + amount,
     0
   );
 
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
   const handleQuantity = (e, item) => {
-    dispatch(updateItemAsync({ ...item, quantity: +e.target.value }));
+    dispatch(updateItemAsync({ id: item.id, quantity: +e.target.value }));
+    // FRONTEND
+    // dispatch(updateItemAsync({ ...item, quantity: +e.target.value }));
   };
 
   const handleRemove = (e, id) => {
@@ -263,7 +265,7 @@ export default function Checkout() {
                   <p className="mt-1 flex justify-start text-sm leading-6 text-gray-600">
                     Choose your existing address
                   </p>
-
+                  {/* 
                   <ul role="list">
                     {user.addresses.map((address, index) => (
                       <li
@@ -302,7 +304,7 @@ export default function Checkout() {
                         </div>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
 
                   <div className="mt-10 space-y-10">
                     <fieldset>
@@ -364,11 +366,13 @@ export default function Checkout() {
                 <div className="flow-root">
                   <ul role="list" className="-my-6 divide-y divide-gray-200">
                     {items.map((item) => (
+                      //frontend item.product.title written as item.title bcz product was directly added later in backend
+                      //but can prepare frontend acc to this as well
                       <li key={item.id} className="flex py-6">
                         <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                           <img
-                            src={item.thumbnail}
-                            alt={item.title}
+                            src={item.product.thumbnail}
+                            alt={item.product.title}
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
@@ -377,12 +381,14 @@ export default function Checkout() {
                           <div>
                             <div className="flex justify-between text-base font-medium text-gray-900">
                               <h3>
-                                <a href={item.href}>{item.title}</a>
+                                <a href={item.product.href}>
+                                  {item.product.title}
+                                </a>
                               </h3>
-                              <p className="ml-4">${item.price}</p>
+                              <p className="ml-4">${item.product.price}</p>
                             </div>
                             <p className="mt-  flex justify-start text-sm text-gray-500">
-                              {item.brand}
+                              {item.product.brand}
                             </p>
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">

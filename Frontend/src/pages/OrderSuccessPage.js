@@ -10,10 +10,10 @@ export default function OrderSuccess() {
   const currentOrder = useSelector((state) => state.order.orders);
   const userid = currentOrder[0].id;
 
-  useEffect(() => {
-    dispatch(resetCartAsync(userid));
-    dispatch(resetOrder());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(resetCartAsync(userid));
+  //   dispatch(resetOrder());
+  // }, [dispatch]);
   return (
     <>
       {!params.id && <Navigate to="/" replace={true}></Navigate>}

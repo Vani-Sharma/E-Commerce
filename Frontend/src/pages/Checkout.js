@@ -78,7 +78,7 @@ export default function Checkout() {
   const handleOrder = (e) => {
     if (selectedAddress && paymentMethod) {
       const order = {
-        user,
+        user: user.id,
         items,
         totalAmount,
         totalItems,

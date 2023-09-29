@@ -41,6 +41,7 @@ export function UserProfile() {
     setValue("city", address.city);
     setValue("state", address.state);
     setValue("pinCode", address.pinCode);
+    setShowAddAddressForm(false);
   };
 
   const handleRemove = (e, index) => {
@@ -68,6 +69,7 @@ export function UserProfile() {
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <button
             onClick={(e) => {
+              reset();
               setShowAddAddressForm(true);
               setSelectedEditIndex(-1);
             }}
@@ -433,48 +435,52 @@ export function UserProfile() {
                   </div>
                 </form>
               ) : null}
-              <div className="flex justify-between mt-2 gap-x-6 py-5 px-5 border-solid border-2 border-gray-200">
-                <div className="flex gap-x-4">
-                  <div className="min-w-0 flex-auto">
-                    <p className="text-sm font-semibold leading-6 text-gray-900">
-                      {address.name}
+              {selectedEditIndex !== index ? (
+                <div className="flex justify-between mt-2 gap-x-6 py-5 px-5 border-solid border-2 border-gray-200">
+                  <div className="flex gap-x-4">
+                    <div className="min-w-0 flex-auto">
+                      <p className="text-sm font-semibold leading-6 text-gray-900">
+                        {address.name}
+                      </p>
+                      <p className="mt-1 flex justify-start  truncate text-xs leading-5 text-gray-500">
+                        {address.street}
+                      </p>
+                      <p className="mt-1 flex justify-start truncate text-xs leading-5 text-gray-500">
+                        {address.pincode}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="hidden sm:flex sm:flex-col sm:items-end">
+                    <p className="text-sm leading-6 text-gray-900">
+                      Phone : {address.phone}
                     </p>
-                    <p className="mt-1 flex justify-start  truncate text-xs leading-5 text-gray-500">
-                      {address.street}
-                    </p>
-                    <p className="mt-1 flex justify-start truncate text-xs leading-5 text-gray-500">
-                      {address.pincode}
+
+                    <p className="text-xs leading-5 text-gray-500">
+                      {address.state}
                     </p>
                   </div>
-                </div>
-                <div className="hidden sm:flex sm:flex-col sm:items-end">
-                  <p className="text-sm leading-6 text-gray-900">
-                    Phone : {address.phone}
-                  </p>
 
-                  <p className="text-xs leading-5 text-gray-500">
-                    {address.state}
-                  </p>
-                </div>
+                  <div className="hidden sm:flex sm:flex-col sm:items-end">
+                    <button
+                      onClick={(e) => {
+                        handleEditForm(index);
+                      }}
+                      type="button"
+                      className="font-medium text-indigo-600 hover:text-indigo-500"
+                    >
+                      Edit
+                    </button>
 
-                <div className="hidden sm:flex sm:flex-col sm:items-end">
-                  <button
-                    onClick={(e) => handleEditForm(index)}
-                    type="button"
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    Edit
-                  </button>
-
-                  <button
-                    onClick={(e) => handleRemove(e, index)}
-                    type="button"
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    Remove
-                  </button>
+                    <button
+                      onClick={(e) => handleRemove(e, index)}
+                      type="button"
+                      className="font-medium text-indigo-600 hover:text-indigo-500"
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
-              </div>
+              ) : null}
             </div>
           ))}
         </div>

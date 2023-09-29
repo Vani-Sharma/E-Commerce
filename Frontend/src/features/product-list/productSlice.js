@@ -97,5 +97,7 @@ export const productSlice = createSlice({
       });
   },
 });
+export const selectBrands = (state) => state.product.brands;
+export const selectCategories = (state) => state.product.categories;
 
 export default productSlice.reducer;

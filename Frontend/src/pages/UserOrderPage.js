@@ -6,7 +6,7 @@ function UserOrderPage() {
     <>
       <Navbar>
         <h1>My Orders</h1>
-        <UserOrder />;
+        <UserOrder />
       </Navbar>
     </>
   );

@@ -1,21 +1,56 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import {
   selectBrands,
   selectCategories,
+  createProductAsync,
 } from "../../product-list/productSlice";
+import { useEffect } from "react";
 function ProductForm() {
   const {
     register,
     reset,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm();
+
   const brands = useSelector(selectBrands);
   const categories = useSelector(selectCategories);
+  const dispatch = useDispatch();
+
+  //used to get parameter passed in url after :
+  const params = useParams();
+
+  useEffect(() => {
+    if (params.id) {
+      setValue("title", product.title);
+      setValue("title", product.title);
+      setValue("title", product.title);
+      setValue("title", product.title);
+    }
+  }, [dispatch]);
   return (
     <>
-      <form>
+      <form
+        noValidate
+        onSubmit={handleSubmit((data) => {
+          const product = { ...data };
+          //want all images in single array to be stored in db
+          product.images = [
+            product.image1,
+            product.image2,
+            product.image3,
+            product.thumbnail,
+          ];
+          product.rating = 0;
+          //deleting each img from product since already put in array
+          delete product["image1"];
+          delete product["image2"];
+          delete product["image3"];
+          dispatch(createProductAsync());
+        })}
+      >
         <div className="text-left space-y-12 bg-white p-12">
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -228,10 +263,11 @@ function ProductForm() {
             </label>
 
             <div className="mt-2">
-              {...register("brands", {
-                required: "brands is required",
-              })}
-              <select>
+              <select
+                {...register("brands", {
+                  required: "brands is required",
+                })}
+              >
                 <option value="">--choose brand--</option>
                 {brands.map((brands) => (
                   <option value={brands.value}>{brands.label}</option>
@@ -249,10 +285,11 @@ function ProductForm() {
             </label>
 
             <div className="mt-2">
-              {...register("categories", {
-                required: "categories is required",
-              })}
-              <select>
+              <select
+              // {...register("categories", {
+              //   required: "categories is required",
+              // })}
+              >
                 <option value="">--choose categories--</option>
                 {categories.map((categories) => (
                   <option value={categories.value}>{categories.label}</option>

@@ -100,6 +100,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "admin/productform/edit/:id",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage />
+      </ProtectedAdmin>
+    ),
+  },
+  {
     path: "/order-success/:id",
     element: <OrderSuccess />,
   },

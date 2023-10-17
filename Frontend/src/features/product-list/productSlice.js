@@ -6,6 +6,7 @@ import {
   fetchProductsByFilter,
   fetchProductById,
   createProduct,
+  updateProduct,
 } from "./productAPI";
 
 const initialState = {
@@ -65,6 +66,14 @@ export const createProductAsync = createAsyncThunk(
   }
 );
 
+export const updateProductAsync = createAsyncThunk(
+  "product/updateProduct",
+  async (updatedItem) => {
+    const response = await updateProduct(updatedItem);
+    return response.data;
+  }
+);
+
 export const productSlice = createSlice({
   name: "product",
   initialState,
@@ -110,10 +119,21 @@ export const productSlice = createSlice({
       .addCase(createProductAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.products.push(action.payload);
+      })
+      .addCase(updateProductAsync.pending, (state) => {
+        state.status = "pending";
+      })
+      .addCase(updateProductAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        const index = state.products.findIndex(
+          (product) => product.id === action.payload.id
+        );
+        state.products[index] = action.payload;
       });
   },
 });
 export const selectBrands = (state) => state.product.brands;
 export const selectCategories = (state) => state.product.categories;
+export const selectedProduct = (state) => state.product.selectedProduct;
 
 export default productSlice.reducer;

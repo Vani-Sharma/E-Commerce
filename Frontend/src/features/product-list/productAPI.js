@@ -26,6 +26,21 @@ export function createProduct(product) {
   });
 }
 
+export function updateProduct(updatedItem) {
+  return new Promise(async (resolve) => {
+    const response = await fetch(
+      "http://localhost:8080/products/" + updatedItem.id,
+      {
+        method: "PATCH",
+        body: JSON.stringify(updatedItem),
+        headers: { "content-type": "application/json" },
+      }
+    );
+    const data = await response.json();
+    resolve({ data });
+  });
+}
+
 export function fetchProductsByFilter(filter, sort, pagination) {
   // filter={"category":["smartphones","laptops"]}
   // sort={_sort:"price",_order:"desc"}

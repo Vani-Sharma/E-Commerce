@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -6,7 +6,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "../cart/cartSlice";
 import { selectUserInfo } from "../user/userSlice";
 
@@ -23,7 +23,9 @@ function classNames(...classes) {
 
 function Navbar({ children }) {
   const items = useSelector(selectItems);
+
   const user = useSelector(selectUserInfo);
+  console.log(user);
 
   return (
     <>
@@ -45,7 +47,8 @@ function Navbar({ children }) {
                     </Link>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
-                        {user.role == "admin" &&
+                        {user &&
+                          user.role === "admin" &&
                           navigation.map((item) => (
                             <Link
                               key={item.name}
@@ -145,7 +148,8 @@ function Navbar({ children }) {
 
               <Disclosure.Panel className="md:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                  {user.role === "admin" &&
+                  {user &&
+                    user.role === "admin" &&
                     navigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
@@ -169,11 +173,11 @@ function Navbar({ children }) {
                       <img className="h-10 w-10 rounded-full" alt="" />
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">
+                      {/* <div className="text-base font-medium leading-none text-white">
                         {user.name}
-                      </div>
+                      </div> */}
                       <div className="text-sm font-medium leading-none text-gray-400">
-                        {user.email}
+                        {user && user.email}
                       </div>
                     </div>
                     <button

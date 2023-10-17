@@ -1,9 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
+
 import {
   selectBrands,
   selectCategories,
   createProductAsync,
+  fetchProductByIdAsync,
+  selectedProduct,
+  updateProductAsync,
 } from "../../product-list/productSlice";
 import { useEffect } from "react";
 function ProductForm() {
@@ -18,18 +23,36 @@ function ProductForm() {
   const brands = useSelector(selectBrands);
   const categories = useSelector(selectCategories);
   const dispatch = useDispatch();
-
+  const selectProduct = useSelector(selectedProduct);
   //used to get parameter passed in url after :
   const params = useParams();
 
+  //even though we may have info already stored in product in redux
+  //but again call made so that info fetched again since
+  //in big projects we might send only selected info to product
+  //so its better to call function separately again
   useEffect(() => {
     if (params.id) {
-      setValue("title", product.title);
-      setValue("title", product.title);
-      setValue("title", product.title);
-      setValue("title", product.title);
+      dispatch(fetchProductByIdAsync(params.id));
     }
-  }, [dispatch]);
+  }, [params.id, dispatch]);
+
+  useEffect(() => {
+    if (selectProduct) {
+      setValue("title", selectProduct.title);
+      setValue("description", selectProduct.description);
+      setValue("discountpercentage", selectProduct.discountPercentage);
+      setValue("price", selectProduct.price);
+      setValue("stock", selectProduct.stock);
+      setValue("thumbnail", selectProduct.thumbnail);
+      setValue("image1", selectProduct.images[0]);
+      setValue("image2", selectProduct.images[1]);
+      setValue("image3", selectProduct.images[2]);
+      setValue("brands", selectProduct.brand);
+      setValue("categories", selectProduct.category);
+    }
+  }, [setValue, selectProduct]);
+
   return (
     <>
       <form
@@ -43,12 +66,20 @@ function ProductForm() {
             product.image3,
             product.thumbnail,
           ];
-          product.rating = 0;
+
           //deleting each img from product since already put in array
           delete product["image1"];
           delete product["image2"];
           delete product["image3"];
           dispatch(createProductAsync());
+
+          if (params.id) {
+            product.id = params.id;
+            product.rating = product.selectProduct || 0;
+            dispatch(updateProductAsync(product));
+          } else {
+            dispatch(createProductAsync(product));
+          }
         })}
       >
         <div className="text-left space-y-12 bg-white p-12">
@@ -60,7 +91,7 @@ function ProductForm() {
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div className="sm:col-span-4">
                 <label
-                  htmlFor="name"
+                  htmlFor="title"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
                   Product Name
@@ -69,11 +100,11 @@ function ProductForm() {
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                       type="text"
-                      id="name"
-                      {...register("name", {
-                        required: "Name is required",
+                      id="title"
+                      {...register("title", {
+                        required: "Title is required",
                       })}
-                      autoComplete="name"
+                      autoComplete="title"
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>

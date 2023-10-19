@@ -45,6 +45,8 @@ export function fetchProductsByFilter(filter, sort, pagination) {
   // filter={"category":["smartphones","laptops"]}
   // sort={_sort:"price",_order:"desc"}
   //pagination={_page:1,_limit=10}
+
+  //TODO:Server will filter deleted products in case of non-admin
   let queryString = "";
 
   for (let key in filter) {

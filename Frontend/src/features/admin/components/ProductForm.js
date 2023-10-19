@@ -9,6 +9,7 @@ import {
   fetchProductByIdAsync,
   selectedProduct,
   updateProductAsync,
+  clearSelectedProduct,
 } from "../../product-list/productSlice";
 import { useEffect } from "react";
 function ProductForm() {
@@ -34,11 +35,11 @@ function ProductForm() {
   useEffect(() => {
     if (params.id) {
       dispatch(fetchProductByIdAsync(params.id));
-    }
+    } else dispatch(clearSelectedProduct());
   }, [params.id, dispatch]);
 
   useEffect(() => {
-    if (selectProduct) {
+    if (selectProduct && params.id) {
       setValue("title", selectProduct.title);
       setValue("description", selectProduct.description);
       setValue("discountpercentage", selectProduct.discountPercentage);
@@ -51,7 +52,16 @@ function ProductForm() {
       setValue("brands", selectProduct.brand);
       setValue("categories", selectProduct.category);
     }
-  }, [setValue, selectProduct]);
+  }, [setValue, selectProduct, params.id]);
+
+  const handleDelete = () => {
+    const product = { ...selectProduct };
+    product.deleted = true;
+
+    //bcz not exactly deleting the product. Since in many big org
+    //product info is still kept so we set deleted property true
+    dispatch(updateProductAsync(product));
+  };
 
   return (
     <>
@@ -75,9 +85,11 @@ function ProductForm() {
 
           if (params.id) {
             product.id = params.id;
-            product.rating = product.selectProduct || 0;
+            product.rating = selectProduct.rating || 0;
             dispatch(updateProductAsync(product));
+            reset();
           } else {
+            product.rating = 0;
             dispatch(createProductAsync(product));
           }
         })}
@@ -422,6 +434,15 @@ function ProductForm() {
           >
             Save
           </button>
+
+          {selectProduct && (
+            <button
+              onClick={handleDelete}
+              className="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Delete
+            </button>
+          )}
         </div>
       </form>
     </>

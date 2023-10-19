@@ -78,8 +78,9 @@ export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    //so that add data in form does not take any random value
+    clearSelectedProduct: (state) => {
+      state.selectedProduct = null;
     },
   },
   extraReducers: (builder) => {
@@ -132,6 +133,8 @@ export const productSlice = createSlice({
       });
   },
 });
+
+export const { clearSelectedProduct } = productSlice.actions;
 export const selectBrands = (state) => state.product.brands;
 export const selectCategories = (state) => state.product.categories;
 export const selectedProduct = (state) => state.product.selectedProduct;

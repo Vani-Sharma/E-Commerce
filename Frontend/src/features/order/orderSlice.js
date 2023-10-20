@@ -1,17 +1,26 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createOrder } from "./orderAPI";
+import { createOrder, fetchAllOrders } from "./orderAPI";
 import { selectLoggedInUser } from "../auth/authSlice";
 
 const initialState = {
   orders: [],
   status: "idle",
   currentOrder: null,
+  totalOrders: 0,
 };
 
 export const createOrderAsync = createAsyncThunk(
   "order/createOrder",
   async (order) => {
     const response = await createOrder(order);
+    return response.data;
+  }
+);
+
+export const fetchAllOrdersAsync = createAsyncThunk(
+  "order/fetchAllOrders",
+  async (pagination) => {
+    const response = await fetchAllOrders(pagination);
     return response.data;
   }
 );
@@ -33,10 +42,21 @@ export const orderSlice = createSlice({
         state.status = "idle";
         state.orders.push(action.payload);
         state.currentOrder = action.payload;
+      })
+      .addCase(fetchAllOrdersAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchAllOrdersAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.orders = action.payload.order;
+        state.totalOrders = action.payload.totalOrders;
       });
   },
 });
 
 export const { resetOrder } = orderSlice.actions;
 export const selectcurrentOrder = (state) => state.order.currentOrder;
+export const selectTotalOrders = (state) => state.order.totalOrders;
+export const selectOrders = (state) => state.order.orders;
+
 export default orderSlice.reducer;

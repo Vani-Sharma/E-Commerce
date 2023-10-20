@@ -10,7 +10,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "../cart/cartSlice";
 import { selectUserInfo } from "../user/userSlice";
 
-const navigation = [{ name: "Admin", link: "/admin", admin: true }];
+const navigation = [
+  { name: "Admin", link: "/admin", admin: true },
+  { name: "Orders", link: "/admin/orders", admin: true },
+];
 const userNavigation = [
   { name: "My Profile", link: "/profile" },
   { name: "My Orders", link: "/orders" },

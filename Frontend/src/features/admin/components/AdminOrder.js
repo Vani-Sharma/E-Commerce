@@ -5,8 +5,8 @@ import {
   selectTotalOrders,
 } from "../../order/orderSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { ITEMS_PER_PAGE } from "../../../app/constants";
-import { PencilIcon, XMarkIcon, EyeIcon } from "@heroicons/react/24/outline";
+import { ITEMS_PER_PAGE, discountedPrice } from "../../../app/constants";
+import { PencilIcon, EyeIcon } from "@heroicons/react/24/outline";
 
 function AdminOrders() {
   const dispatch = useDispatch();
@@ -23,6 +23,9 @@ function AdminOrders() {
     dispatch(fetchAllOrdersAsync({ pagination }));
   }, [dispatch, page]);
 
+  const handleEdit = () => {};
+
+  const handleShow = () => {};
   return (
     <>
       <div className="overflow-x-auto">
@@ -32,7 +35,7 @@ function AdminOrders() {
               <table className="min-w-max w-full table-auto">
                 <thead>
                   <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th className="py-3 px-6 text-left">Order#</th>
+                    <th className="py-3 px-6 text-left">Order Number</th>
                     <th className="py-3 px-6 text-left">Items</th>
                     <th className="py-3 px-6 text-center">Total Amount</th>
                     <th className="py-3 px-6 text-center">Shipping Address</th>
@@ -59,7 +62,8 @@ function AdminOrders() {
                               />
                             </div>
                             <span>
-                              {item.title}-#{item.quantity}-${item.price}
+                              {item.title}-#{item.quantity}-$
+                              {discountedPrice(item)}
                             </span>
                           </div>
                         ))}
@@ -70,16 +74,17 @@ function AdminOrders() {
                         </div>
                       </td>
                       <td className="py-3 px-6 text-center">
-                        <div className="flex items-center justify-center">
+                        <div className="">
                           <div>
                             {" "}
                             <strong>{order.selectedAddress.name}</strong>,
                           </div>
-                          {order.selectedAddress.street}
-                          {order.selectedAddress.state}
-                          {order.selectedAddress.city},
-                          {order.selectedAddress.pinCode},
-                          {order.selectedAddress.phone}
+
+                          <div>{order.selectedAddress.street}</div>
+                          <div>{order.selectedAddress.state}</div>
+                          <div>{order.selectedAddress.city},</div>
+                          <div>{order.selectedAddress.pinCode},</div>
+                          <div>{order.selectedAddress.phone}</div>
                         </div>
                       </td>
                       <td className="py-3 px-6 text-center">
@@ -89,12 +94,18 @@ function AdminOrders() {
                       </td>
                       <td className="py-3 px-6 text-center">
                         <div className="flex item-center justify-center">
-                          <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                            <EyeIcon className="w-4 h-4"></EyeIcon>
+                          <div className="w-6 mr-4 transform hover:text-purple-500 hover:scale-110">
+                            <EyeIcon
+                              className="w-8 h-4"
+                              onClick={(e) => handleShow(order)}
+                            ></EyeIcon>
                           </div>
-                          <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                          <div className="w-6 mr-2 transform hover:text-purple-500 hover:scale-110">
                             {" "}
-                            <PencilIcon className="w-4 h-4"></PencilIcon>
+                            <PencilIcon
+                              className="w-8 h-4"
+                              onClick={(e) => handleEdit(order)}
+                            ></PencilIcon>
                           </div>
                           <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110"></div>
                         </div>

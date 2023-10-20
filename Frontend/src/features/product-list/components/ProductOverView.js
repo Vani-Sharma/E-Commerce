@@ -6,6 +6,7 @@ import { fetchProductByIdAsync } from "../productSlice";
 import { useParams } from "react-router-dom";
 import { selectLoggedInUser } from "../../auth/authSlice";
 import { addToCartAsync, selectItems } from "../../cart/cartSlice";
+import { discountedPrice } from "../../../app/constants";
 
 const color = [
   { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
@@ -154,8 +155,12 @@ export default function ProductOverView() {
             {/* Options */}
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
-              <p className="text-3xl text-left tracking-tight text-gray-900">
+              <p className="text-xl line-through text-left tracking-tight text-gray-900">
                 {product.price}
+              </p>
+
+              <p className="text-3xl text-left tracking-tight text-gray-900">
+                {discountedPrice(product)}
               </p>
 
               {/* Reviews */}

@@ -5,6 +5,7 @@ import {
   selectUserInfo,
   selectUserOrder,
 } from "../userSlice";
+import { discountedPrice } from "../../../app/constants";
 
 export function UserOrder() {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ export function UserOrder() {
                             <h3>
                               <a href={item.href}>{item.title}</a>
                             </h3>
-                            <p className="ml-4">${item.price}</p>
+                            <p className="ml-4">${discountedPrice(item)}</p>
                           </div>
                           <p className="mt-  flex justify-start text-sm text-gray-500">
                             {item.brand}

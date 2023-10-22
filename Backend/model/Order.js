@@ -8,7 +8,8 @@ const orderSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   //TODO : enum type
   paymentMethod: { type: String, required: true },
-  status: { type: String, default: "pending", required: true },
+  status: { type: String, default: "pending" },
+  selectedAddress: { type: [Schema.Types.Mixed], required: true },
 });
 
 const virtual = orderSchema.virtual("id");

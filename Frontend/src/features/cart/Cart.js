@@ -48,6 +48,7 @@ export default function Cart() {
                         <h3>
                           <a href={item.product.href}>{item.product.title}</a>
                         </h3>
+                        {console.log(item.price)}
                         <p className="ml-4">${discountedPrice(item)}</p>
                       </div>
                       <p className="mt-  flex justify-start text-sm text-gray-500">

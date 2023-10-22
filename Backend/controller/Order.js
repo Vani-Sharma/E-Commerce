@@ -4,7 +4,7 @@ exports.fetchOrderByUser = async (req, res) => {
   const { user } = req.query;
   try {
     //populate returns all values of that item
-    const orderItem = await Order.find({ user: user }).populate("product");
+    const orderItem = await Order.find({ user: user });
     res.status(200).json(orderItem);
   } catch (err) {
     res.status(400).json(err);
@@ -16,7 +16,7 @@ exports.createOrder = async (req, res) => {
   const order = new Order(req.body);
   try {
     const doc = await order.save();
-    res.status(201).json(result);
+    res.status(201).json(doc);
   } catch (err) {
     res.status(400).json(err);
   }

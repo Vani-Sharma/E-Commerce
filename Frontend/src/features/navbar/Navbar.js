@@ -28,7 +28,6 @@ function Navbar({ children }) {
   const items = useSelector(selectItems);
 
   const user = useSelector(selectUserInfo);
-  console.log(user);
 
   return (
     <>

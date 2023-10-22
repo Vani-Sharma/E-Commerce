@@ -173,11 +173,11 @@ export default function ProductOverView() {
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
               <p className="text-xl line-through text-left tracking-tight text-gray-900">
-                {product.price}
+                ${product.price}
               </p>
 
               <p className="text-3xl text-left tracking-tight text-gray-900">
-                {discountedPrice(product)}
+                ${discountedPrice(product)}
               </p>
 
               {/* Reviews */}

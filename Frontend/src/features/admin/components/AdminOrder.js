@@ -95,7 +95,7 @@ function AdminOrders() {
                       className="py-3 px-6 text-left cursor-pointer"
                       onClick={(e) =>
                         handleSort({
-                          sort: "id",
+                          sort: "totalAmount",
                           order: sort?._order === "desc" ? "asc" : "desc",
                         })
                       }

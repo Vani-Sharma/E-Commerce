@@ -48,20 +48,37 @@ export default function ProductOverView() {
   const handleCart = (e) => {
     e.preventDefault();
     if (items.findIndex((item) => item.product.id === product.id) < 0) {
-      //done so that product id does not crash with cart id as in frontend data.json is storing data
-      // and multiple users are adding data in same cart obj so deletion and updating of same id causes program crash
       const newItem = {
-        //frontend ...product,
-        product: product.id, //backend
+        product: product.id,
         quantity: 1,
         user: user.id,
       };
-      // FRONTNED
-      // delete newItem["id"];
-      //allows cart to auto generate id for each new product added to cart
+
       dispatch(addToCartAsync(newItem));
     }
   };
+
+  // const handleCart = (e) => {
+  //   e.preventDefault();
+  //   if (items.findIndex((item) => item.productId === product.id) < 0) {
+
+  // multiple users can add same product in same cart obj in frontend
+  //so deletion and updating of same id can cause program crash,
+  //thus can't make product id as cart id
+  //so make new product id for added item and check item already in cart through it
+
+  //   const newItem = {
+  //       ...product,
+  //       productId: product.id,
+  //       quantity: 1,
+  //       user: user.id,
+  //     };
+  //     // delete newItem["id"];
+  //     //allows cart to auto generate id for each new product added to cart
+  //     dispatch(addToCartAsync(newItem));
+  //   }
+  // };
+
   useEffect(() => {
     dispatch(fetchProductByIdAsync(params.id));
   }, [dispatch, params.id]);

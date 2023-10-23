@@ -9,19 +9,22 @@ export default function Cart() {
   const items = useSelector(selectItems);
   const dispatch = useDispatch();
 
-  const totalAmount = items.reduce(
-    (amount, item) => discountedPrice(item) * item.quantity + amount,
-    0
-  );
-
-  const totalItems = items.reduce((total, item) => item.quantity + total, 0);
   const handleQuantity = (e, item) => {
     dispatch(updateItemAsync({ id: item.id, quantity: +e.target.value }));
   };
 
+  const totalAmount = items.reduce(
+    (amount, item) => discountedPrice(item) * item.quantity + amount,
+    0
+  );
+  console.log(items[0].price);
+
+  const totalItems = items.reduce((total, item) => item.quantity + total, 0);
+
   const handleRemove = (e, id) => {
     dispatch(deleteItemAsync(id));
   };
+
   return (
     <>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
@@ -48,8 +51,7 @@ export default function Cart() {
                         <h3>
                           <a href={item.product.href}>{item.product.title}</a>
                         </h3>
-                        {console.log(item.price)}
-                        <p className="ml-4">${discountedPrice(item)}</p>
+                        <p className="ml-4">${discountedPrice(item.product)}</p>
                       </div>
                       <p className="mt-  flex justify-start text-sm text-gray-500">
                         {item.product.brand}
@@ -95,6 +97,7 @@ export default function Cart() {
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <div className="flex justify-between my-2 text-base font-medium text-gray-900">
             <p>Subtotal</p>
+
             <p>${totalAmount}</p>
           </div>
 

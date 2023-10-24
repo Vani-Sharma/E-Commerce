@@ -20,7 +20,6 @@ export function checkUser(loginfo) {
       });
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         resolve({ data });
       } else {
         const err = await response.json();

@@ -398,7 +398,7 @@ function ProductGrid({ products }) {
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
             {products.map((product) => (
               <div>
-                <Link to={`/productdetail/${product.id}`}>
+                <Link to={`/productdetail/${product.id}`} key={product.id}>
                   <div
                     key={product.id}
                     className="group p-2 relative border-solid border-2 border-gray-200"

@@ -261,7 +261,7 @@ export function UserProfile() {
 
           {user.role === "user" &&
             user.addresses.map((address, index) => (
-              <div>
+              <div key={index}>
                 {selectedEditIndex === index ? (
                   <form
                     className="bg-white px-5 py-5 mt-12 "

@@ -14,10 +14,9 @@ export default function Cart() {
   };
 
   const totalAmount = items.reduce(
-    (amount, item) => discountedPrice(item) * item.quantity + amount,
+    (amount, item) => discountedPrice(item.product) * item.quantity + amount,
     0
   );
-  console.log(items[0].price);
 
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
 

@@ -38,15 +38,15 @@ export default function ProductList() {
   const categories = useSelector((state) => state.product.categories);
   const filters = [
     {
-      id: "brands",
+      id: "brand",
       name: "Brands",
       options: brands,
     },
-    {
-      id: "category",
-      name: "Category",
-      options: categories,
-    },
+    // {
+    //   id: "categories",
+    //   name: "Category",
+    //   options: categories,
+    // },
   ];
   const [filter, setFilter] = useState({});
   const totalItems = useSelector((state) => state.product.totalItems);
@@ -54,7 +54,6 @@ export default function ProductList() {
   const handlefilter = (e, section, option) => {
     const newFilter = { ...filter };
 
-    console.log(e.target.checked);
     if (e.target.checked) {
       if (newFilter[section.id]) {
         newFilter[section.id].push(option.values);
@@ -63,13 +62,12 @@ export default function ProductList() {
       }
     } else {
       const index = newFilter[section.id].findIndex(
-        (el) => el === option.value
+        (el) => el === option.values
       );
       newFilter[section.id].splice(index, 1);
     }
-    console.log({ newFilter });
     setFilter(newFilter);
-    // console.log(section.id, option.values);
+    console.log(filter);
   };
 
   const handleSort = (e, option) => {
@@ -87,7 +85,9 @@ export default function ProductList() {
 
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
-    dispatch(fetchProductsByFilterAsync({ filter, sort, pagination }));
+    dispatch(
+      fetchProductsByFilterAsync({ filter, sort, pagination, admin: true })
+    );
   }, [dispatch, filter, sort, page]);
 
   useEffect(() => {
@@ -283,30 +283,31 @@ function MobileFilter({
                         </h3>
                         <Disclosure.Panel className="pt-6">
                           <div className="space-y-6">
-                            {section.options.map((option, optionIdx) => (
-                              <div
-                                key={option.value}
-                                className="flex items-center"
-                              >
-                                <input
-                                  id={`filter-${section.id}-${optionIdx}`}
-                                  name={`${section.id}[]`}
-                                  defaultValue={option.value}
-                                  type="checkbox"
-                                  defaultChecked={option.checked}
-                                  onChange={(e) =>
-                                    handlefilter(e, section, option)
-                                  }
-                                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label
-                                  htmlFor={`filter-${section.id}-${optionIdx}`}
-                                  className="ml-3 text-sm text-gray-600"
+                            {console.log(section) &&
+                              section.options.map((option, optionIdx) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
                                 >
-                                  {option.label}
-                                </label>
-                              </div>
-                            ))}
+                                  <input
+                                    id={`filter-${section.id}-${optionIdx}`}
+                                    name={`${section.id}[]`}
+                                    defaultValue={option.value}
+                                    type="checkbox"
+                                    defaultChecked={option.checked}
+                                    onChange={(e) =>
+                                      handlefilter(e, section, option)
+                                    }
+                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                  />
+                                  <label
+                                    htmlFor={`filter-${section.id}-${optionIdx}`}
+                                    className="ml-3 text-sm text-gray-600"
+                                  >
+                                    {option.label}
+                                  </label>
+                                </div>
+                              ))}
                           </div>
                         </Disclosure.Panel>
                       </>
@@ -352,11 +353,11 @@ function DesktopFilter({ handlefilter, filters }) {
               <Disclosure.Panel className="pt-6">
                 <div className="space-y-4">
                   {section.options.map((option, optionIdx) => (
-                    <div key={option.value} className="flex items-center">
+                    <div key={option.values} className="flex items-center">
                       <input
                         id={`filter-${section.id}-${optionIdx}`}
                         name={`${section.id}[]`}
-                        defaultValue={option.value}
+                        defaultValue={option.values}
                         type="checkbox"
                         defaultChecked={option.checked}
                         onChange={(e) => handlefilter(e, section, option)}

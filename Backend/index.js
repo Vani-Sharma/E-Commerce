@@ -20,7 +20,7 @@ server.use(
 server.use(express.json()); //to parse req.body ---> expecting json body from frontend
 server.use("/products", productRouter.router);
 server.use("/brands", brandRouter.router);
-server.use("/category", categoryRouter.router);
+server.use("/categories", categoryRouter.router);
 server.use("/users", userRouter.router);
 server.use("/auth", authRouter.router);
 server.use("/cart", cartRouter.router);

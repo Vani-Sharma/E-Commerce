@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
-  fetchAllProducts,
   fetchBrands,
   fetchCategories,
   fetchProductsByFilter,
@@ -17,14 +16,6 @@ const initialState = {
   totalItems: 0,
   selectedProduct: null,
 };
-
-export const fetchAllProductsAsync = createAsyncThunk(
-  "product/fetchAllProducts",
-  async () => {
-    const response = await fetchAllProducts();
-    return response.data;
-  }
-);
 
 export const fetchProductByIdAsync = createAsyncThunk(
   "product/fetchProductById",

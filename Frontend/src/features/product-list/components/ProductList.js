@@ -43,7 +43,7 @@ export default function ProductList() {
       options: brands,
     },
     // {
-    //   id: "categories",
+    //   id: "category",
     //   name: "Category",
     //   options: categories,
     // },
@@ -85,9 +85,7 @@ export default function ProductList() {
 
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
-    dispatch(
-      fetchProductsByFilterAsync({ filter, sort, pagination, admin: true })
-    );
+    dispatch(fetchProductsByFilterAsync({ filter, sort, pagination }));
   }, [dispatch, filter, sort, page]);
 
   useEffect(() => {
@@ -286,13 +284,13 @@ function MobileFilter({
                             {console.log(section) &&
                               section.options.map((option, optionIdx) => (
                                 <div
-                                  key={option.value}
+                                  key={option.values}
                                   className="flex items-center"
                                 >
                                   <input
                                     id={`filter-${section.id}-${optionIdx}`}
                                     name={`${section.id}[]`}
-                                    defaultValue={option.value}
+                                    defaultValue={option.values}
                                     type="checkbox"
                                     defaultChecked={option.checked}
                                     onChange={(e) =>

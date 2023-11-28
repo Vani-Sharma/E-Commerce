@@ -37,15 +37,15 @@ export default function AdminProductList() {
   const categories = useSelector((state) => state.product.categories);
   const filters = [
     {
-      id: "brands",
+      id: "brand",
       name: "Brands",
       options: brands,
     },
-    {
-      id: "category",
-      name: "Category",
-      options: categories,
-    },
+    // {
+    //   id: "category",
+    //   name: "Category",
+    //   options: categories,
+    // },
   ];
   const [filter, setFilter] = useState({});
   const totalItems = useSelector((state) => state.product.totalItems);
@@ -86,7 +86,9 @@ export default function AdminProductList() {
 
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
-    dispatch(fetchProductsByFilterAsync({ filter, sort, pagination }));
+    dispatch(
+      fetchProductsByFilterAsync({ filter, sort, pagination, admin: true })
+    );
   }, [dispatch, filter, sort, page]);
 
   useEffect(() => {
@@ -295,13 +297,13 @@ function MobileFilter({
                           <div className="space-y-6">
                             {section.options.map((option, optionIdx) => (
                               <div
-                                key={option.value}
+                                key={option.values}
                                 className="flex items-center"
                               >
                                 <input
                                   id={`filter-${section.id}-${optionIdx}`}
                                   name={`${section.id}[]`}
-                                  defaultValue={option.value}
+                                  defaultValue={option.values}
                                   type="checkbox"
                                   defaultChecked={option.checked}
                                   onChange={(e) =>
@@ -362,11 +364,11 @@ function DesktopFilter({ handlefilter, filters }) {
               <Disclosure.Panel className="pt-6">
                 <div className="space-y-4">
                   {section.options.map((option, optionIdx) => (
-                    <div key={option.value} className="flex items-center">
+                    <div key={option.values} className="flex items-center">
                       <input
                         id={`filter-${section.id}-${optionIdx}`}
                         name={`${section.id}[]`}
-                        defaultValue={option.value}
+                        defaultValue={option.values}
                         type="checkbox"
                         defaultChecked={option.checked}
                         onChange={(e) => handlefilter(e, section, option)}

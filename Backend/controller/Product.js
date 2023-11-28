@@ -17,9 +17,12 @@ exports.fetchAllProducts = async (req, res) => {
   // sort={_sort:"price",_order:"desc"}
   //pagination={_page:1,_limit=10}
 
+  let condition = {};
+  if (!req.query.admin) condition.deleted = { $ne: true };
+
   //deleted not equal to true
-  let query = Product.find({ deleted: { $ne: true } });
-  let totalProductsQuery = Product.find({ deleted: { $ne: true } });
+  let query = Product.find(condition);
+  let totalProductsQuery = Product.find(condition);
 
   //using query so that each sort done on previously sorted query
   if (req.query.category) {

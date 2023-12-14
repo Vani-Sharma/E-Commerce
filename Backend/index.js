@@ -15,6 +15,7 @@ const passport = require("passport");
 const crypto = require("crypto");
 const LocalStrategy = require("passport-local").Strategy;
 const { User } = require("./model/User");
+const { sanitizeUser, isAuth } = require("./services/common");
 
 //middleware
 
@@ -62,7 +63,7 @@ passport.use(
           if (!crypto.timingSafeEqual(user.password, hashedPassword)) {
             return done(null, false, { message: "invalid credential" });
           }
-          done(null, user); // this line sends to serialize
+          done(null, sanitizeUser(user)); // this line sends to serialize
         }
       );
     } catch (err) {
@@ -90,10 +91,11 @@ async function main() {
   console.log("db started");
 }
 
-function isAuth(req, res, done) {
-  if (req.user) next();
-  else res.send(401);
-}
+// helper function. Instead JWT token used
+// function isAuth(req, res, done) {
+//   if (req.user) next();
+//   else res.send(401);
+// }
 
 server.get("/", (req, res) => {
   res.json({ status: "success" });

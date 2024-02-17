@@ -13,9 +13,17 @@ const orderRouter = require("./routes/Order");
 const session = require("express-session");
 const passport = require("passport");
 const crypto = require("crypto");
+var jwt = require("jsonwebtoken");
 const LocalStrategy = require("passport-local").Strategy;
+const JwtStrategy = require("passport-jwt").Strategy,
+  ExtractJwt = require("passport-jwt").ExtractJwt;
 const { User } = require("./model/User");
 const { sanitizeUser, isAuth } = require("./services/common");
+
+//JWT OPTIONS
+const opts = {};
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.secretOrKey = "SECRET_KEY"; //this should not be in code. It encrypts JWT token
 
 //middleware
 
@@ -46,6 +54,7 @@ main().catch((err) => console.log(err));
 // Passport Strategy
 // done(error,value to be returned,messg)
 passport.use(
+  "local",
   new LocalStrategy(async function (username, password, done) {
     try {
       // by default passport uses username
@@ -69,6 +78,23 @@ passport.use(
     } catch (err) {
       done(err);
     }
+  })
+);
+
+passport.use(
+  "jwt",
+  new JwtStrategy(opts, function (jwt_payload, done) {
+    User.findOne({ id: jwt_payload.sub }, function (err, user) {
+      if (err) {
+        return done(err, false);
+      }
+      if (user) {
+        return done(null, user);
+      } else {
+        return done(null, false);
+        // or you could create a new account
+      }
+    });
   })
 );
 

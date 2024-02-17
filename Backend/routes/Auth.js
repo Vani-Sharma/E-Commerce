@@ -8,5 +8,5 @@ router
   .post("/signup", createUser)
   //passport.authenticate(strategy name i.e. local)
   .post("/login", passport.authenticate("local"), loginUser)
-  .get("/check", checkUser);
+  .get("/check", passport.authenticate("jwt"), checkUser);
 exports.router = router;
